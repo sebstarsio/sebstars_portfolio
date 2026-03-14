@@ -1,5 +1,7 @@
 # SebStars — Full-Stack Software Architect Portfolio
 
+**🌍 Documentation** — 🇬🇧 [English](README.md) · 🇫🇷 [Français](README.fr.md)
+
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19-61dafb?logo=react)](https://react.dev/)
