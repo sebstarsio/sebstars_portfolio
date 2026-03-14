@@ -170,11 +170,13 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                 </a>
               )}
               <a
-                href={`mailto:contact@sebstars.io?subject=Demande d'accès au code source - ${encodeURIComponent(project.title)}&body=Bonjour,%0D%0A%0D%0AJe souhaiterais avoir accès au code source du projet "${project.title}".%0D%0A%0D%0AMerci de me contacter pour discuter des modalités.%0D%0A%0D%0ACordialement`}
+                href={project.github || 'https://github.com/sebstars/sebstars_portfolio'}
                 className="project-link project-link-github"
-                title="Demander l'accès au code source par email"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Voir le code source sur GitHub"
               >
-                Code source (sur demande)
+                Voir le code
               </a>
             </div>
           </div>
