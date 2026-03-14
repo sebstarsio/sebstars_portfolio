@@ -429,6 +429,7 @@
 
   .calculator-grid.scientific-mode {
     grid-template-columns: repeat(4, 1fr);
+    gap: 0.4rem;
   }
 
   .calculator-display-text {
@@ -442,12 +443,20 @@
   .calculator-history {
     max-height: 200px;
   }
+
+  .calculator-btn-scientific {
+    font-size: 0.8rem;
+  }
 }
 
-/* Mobile étroit : éviter débordement */
+/* Mobile étroit : éviter débordement, touches plus compactes */
 @media (max-width: 600px) {
   .calculator-wrapper {
     padding: 2rem 1rem;
+  }
+
+  .calculator-container {
+    padding: 1rem;
   }
 
   .calculator-btn {
@@ -456,9 +465,65 @@
     font-size: 1rem;
   }
 
+  .calculator-grid.scientific-mode {
+    gap: 0.35rem;
+  }
+
+  .calculator-btn-scientific {
+    font-size: 0.75rem;
+    padding: 0.7rem 0.4rem;
+    min-height: 44px;
+  }
+
   .calculator-btn-memory {
     padding: 0.6rem;
     font-size: 0.8rem;
+  }
+}
+
+/* Très petit écran : grille scientifique lisible sans débordement */
+@media (max-width: 480px) {
+  .calculator-wrapper {
+    padding: 1rem 0.75rem;
+  }
+
+  .calculator-container {
+    padding: 0.75rem;
+  }
+
+  .calculator-btn {
+    padding: 0.65rem 0.35rem;
+    min-height: 42px;
+    font-size: 0.9rem;
+  }
+
+  .calculator-btn-scientific {
+    font-size: 0.7rem;
+    padding: 0.5rem 0.25rem;
+    min-height: 38px;
+  }
+
+  .calculator-grid,
+  .calculator-grid.scientific-mode {
+    gap: 0.3rem;
+  }
+
+  .calculator-memory-group {
+    gap: 0.3rem;
+  }
+
+  .calculator-btn-memory {
+    padding: 0.4rem 0.3rem;
+    font-size: 0.7rem;
+  }
+
+  .calculator-display-text {
+    font-size: 1.25rem;
+  }
+
+  .calculator-screen {
+    padding: 1rem;
+    min-height: 70px;
   }
 }
 

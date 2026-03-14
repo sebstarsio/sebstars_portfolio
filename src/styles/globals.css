@@ -5,6 +5,7 @@
  */
 
 @import './variables.css';
+@import './lab-identity.css';
 @import './main.css';
 @import './animations.css';
 @import './components/header.css';
@@ -18,6 +19,9 @@
 @import './components/waves.css';
 @import './components/cookie-consent.css';
 @import './components/view-source-button.css';
+@import './components/architecture-notes.css';
+@import './components/demo-technical-badges.css';
+@import './components/studio-mode.css';
 @import './demos/solar-system.css';
 @import './demos/calculator.css';
 @import './demos/constellations.css';

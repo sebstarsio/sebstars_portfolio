@@ -40,6 +40,28 @@
   
   /* Ombres */
   --shadow-soft: 0 26px 60px rgba(0, 0, 0, 0.7);  /* Ombre douce */
+
+  /* ========== LAB IDENTITY — Deep Space / Research Lab ========== */
+  /* Fonds (ebony, slate-950, zinc-950) */
+  --lab-bg-ebony: #0f1419;
+  --lab-bg-slate: #020617;
+  --lab-bg-zinc: #09090b;
+
+  /* Accents technologiques (primary → cyan, secondary → violet, signal → emerald) */
+  --lab-accent-cyan: #06b6d4;
+  --lab-accent-violet: #7c3aed;
+  --lab-accent-emerald: #34d399;
+
+  /* Glow technique (ombres portées lumineuses) */
+  --lab-glow-cyan: 0 0 20px rgba(6, 182, 212, 0.35), 0 0 40px rgba(6, 182, 212, 0.15);
+  --lab-glow-violet: 0 0 20px rgba(124, 58, 237, 0.35), 0 0 40px rgba(124, 58, 237, 0.15);
+  --lab-glow-emerald: 0 0 20px rgba(52, 211, 153, 0.35), 0 0 40px rgba(52, 211, 153, 0.15);
+
+  /* Glassmorphism réutilisable */
+  --lab-glass-bg: rgba(15, 20, 45, 0.6);
+  --lab-glass-border: rgba(6, 182, 212, 0.12);
+  --lab-glass-blur: 12px;
+  --lab-glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 /**
@@ -73,5 +95,19 @@ html.theme-light,
   
   /* Ombres (plus douces en mode clair) */
   --shadow-soft: 0 26px 60px rgba(125, 211, 252, 0.2);
+
+  /* Lab Identity — mode clair (accents adoucis) */
+  --lab-bg-ebony: #f1f5f9;
+  --lab-bg-slate: #f8fafc;
+  --lab-bg-zinc: #f4f4f5;
+  --lab-accent-cyan: #0891b2;
+  --lab-accent-violet: #6d28d9;
+  --lab-accent-emerald: #10b981;
+  --lab-glow-cyan: 0 0 20px rgba(8, 145, 178, 0.2);
+  --lab-glow-violet: 0 0 20px rgba(109, 40, 217, 0.2);
+  --lab-glow-emerald: 0 0 20px rgba(16, 185, 129, 0.2);
+  --lab-glass-bg: rgba(255, 255, 255, 0.75);
+  --lab-glass-border: rgba(8, 145, 178, 0.2);
+  --lab-glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 

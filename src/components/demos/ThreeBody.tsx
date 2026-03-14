@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import * as THREE from 'three';
-import ViewSourceButton from '@/components/ui/ViewSourceButton';
+import type { ArchitectureNotesData } from '@/components/ui/ArchitectureNotes';
 import '../../styles/demos/three-body.css';
 
 interface Body {
@@ -41,7 +41,12 @@ const PALETTES: Record<string, string[]> = {
   nova: ['#ffc26b', '#ff6b6b', '#ffd36b', '#ff2e92', '#32ffe3', '#e4ff54'],
 };
 
-export default function ThreeBody() {
+interface ThreeBodyProps {
+  architectureNotes?: ArchitectureNotesData;
+  lang?: 'fr' | 'en';
+}
+
+export default function ThreeBody({ architectureNotes, lang = 'fr' }: ThreeBodyProps = {}) {
   const containerRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<THREE.Scene | null>(null);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
@@ -690,8 +695,7 @@ export default function ThreeBody() {
   };
 
   return (
-    <div style={{ position: 'relative' }}>
-      <ViewSourceButton filename="ThreeBody.tsx" />
+    <div>
       <section className="wf-section wf-hero">
         <div className="wf-hero-bg">
           <div className="wf-starfield-layer"></div>

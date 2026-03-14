@@ -1,42 +1,49 @@
 <svg width="320" height="240" viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="solarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#16213e;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0f3460;stop-opacity:1" />
+    <linearGradient id="solarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0d28;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#10163b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#080c1c;stop-opacity:1" />
     </linearGradient>
-    <radialGradient id="sunGrad">
-      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#ff8c00;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#ff4500;stop-opacity:0.8" />
+    <radialGradient id="sunGrad" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#fff5cc;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#ffd700;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#ff8c00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e67e22;stop-opacity:0.9" />
     </radialGradient>
   </defs>
-  
-  <!-- Background -->
-  <rect width="320" height="240" fill="url(#solarGrad)"/>
-  
-  <!-- Orbits -->
-  <circle cx="160" cy="120" r="80" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-  <circle cx="160" cy="120" r="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-  <circle cx="160" cy="120" r="120" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-  
-  <!-- Sun -->
-  <circle cx="160" cy="120" r="20" fill="url(#sunGrad)" opacity="0.9">
-    <animate attributeName="opacity" values="0.9;1;0.9" dur="2s" repeatCount="indefinite"/>
-  </circle>
-  
-  <!-- Planets -->
-  <circle cx="240" cy="120" r="4" fill="#8c7853" opacity="0.8"/>
-  <circle cx="220" cy="100" r="4" fill="#e6be8a" opacity="0.8"/>
-  <circle cx="200" cy="80" r="5" fill="#4b6cb7" opacity="0.8"/>
-  <circle cx="180" cy="60" r="4" fill="#c1440e" opacity="0.8"/>
-  
-  <!-- Stars -->
-  <circle cx="50" cy="40" r="1" fill="#fff" opacity="0.6"/>
-  <circle cx="280" cy="50" r="1" fill="#fff" opacity="0.6"/>
-  <circle cx="30" cy="200" r="1" fill="#fff" opacity="0.6"/>
-  <circle cx="290" cy="190" r="1" fill="#fff" opacity="0.6"/>
-  <circle cx="100" cy="30" r="1" fill="#fff" opacity="0.6"/>
-  <circle cx="250" cy="30" r="1" fill="#fff" opacity="0.6"/>
-</svg>
 
+  <!-- Background -->
+  <rect width="320" height="240" fill="url(#solarBg)"/>
+
+  <!-- Orbits (compression interne, respiration externe — aligné solar-system.css) -->
+  <circle cx="160" cy="120" r="22.5" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="0.8"/>
+  <circle cx="160" cy="120" r="33" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="0.8"/>
+  <circle cx="160" cy="120" r="43.75" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="0.8"/>
+  <circle cx="160" cy="120" r="53.75" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="0.8"/>
+  <circle cx="160" cy="120" r="71.25" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="0.8"/>
+  <circle cx="160" cy="120" r="87.5" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="0.8"/>
+  <circle cx="160" cy="120" r="103.75" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="0.8"/>
+  <circle cx="160" cy="120" r="120" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="0.8"/>
+
+  <!-- Sun (taille réduite, cohérente démo) -->
+  <circle cx="160" cy="120" r="9" fill="url(#sunGrad)" opacity="0.95"/>
+
+  <!-- Planets — tailles différenciées, positions asymétriques (déphasage) -->
+  <circle cx="182.4" cy="110.5" r="2" fill="#8c7853" opacity="0.9"/>
+  <circle cx="165.7" cy="87.5" r="2.5" fill="#e6be8a" opacity="0.9"/>
+  <circle cx="126.3" cy="91.7" r="3" fill="#4b6cb7" opacity="0.9"/>
+  <circle cx="107.8" cy="134" r="2.5" fill="#c1440e" opacity="0.9"/>
+  <circle cx="130" cy="184.4" r="4.5" fill="#d8ca9d" opacity="0.9"/>
+  <circle cx="182.8" cy="35" r="4" fill="#f4d03f" opacity="0.9"/>
+  <circle cx="245.2" cy="179.7" r="3" fill="#85c1e9" opacity="0.9"/>
+  <circle cx="280" cy="120" r="3" fill="#5dade2" opacity="0.9"/>
+
+  <!-- Étoiles de fond -->
+  <circle cx="48" cy="36" r="0.8" fill="#fff" opacity="0.5"/>
+  <circle cx="272" cy="44" r="0.8" fill="#fff" opacity="0.5"/>
+  <circle cx="28" cy="198" r="0.8" fill="#fff" opacity="0.5"/>
+  <circle cx="292" cy="186" r="0.8" fill="#fff" opacity="0.5"/>
+  <circle cx="96" cy="26" r="0.8" fill="#fff" opacity="0.5"/>
+  <circle cx="254" cy="26" r="0.8" fill="#fff" opacity="0.5"/>
+</svg>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useSession, signIn, signOut } from 'next-auth/react';
-import ViewSourceButton from '@/components/ui/ViewSourceButton';
+import type { ArchitectureNotesData } from '@/components/ui/ArchitectureNotes';
 import '../../styles/demos/ecommerce.css';
 
 interface Product {
@@ -36,7 +36,12 @@ interface WishlistItem {
   product: Product;
 }
 
-export default function Ecommerce() {
+interface EcommerceProps {
+  architectureNotes?: ArchitectureNotesData;
+  lang?: 'fr' | 'en';
+}
+
+export default function Ecommerce({ architectureNotes, lang = 'fr' }: EcommerceProps = {}) {
   const { data: session } = useSession();
   const [products, setProducts] = useState<Product[]>([]);
   const [recommendations, setRecommendations] = useState<Product[]>([]);
@@ -323,8 +328,7 @@ export default function Ecommerce() {
   const allCategories = [{ id: 'tous', name: 'Tous', slug: 'tous' }, ...categories];
 
   return (
-    <div style={{ position: 'relative' }}>
-      <ViewSourceButton filename="Ecommerce.tsx" />
+    <div>
       <section className="wf-section wf-hero">
         <div className="wf-hero-bg">
           <div className="wf-starfield-layer"></div>

@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { logger } from '@/lib/logger';
-import ViewSourceButton from '@/components/ui/ViewSourceButton';
+import type { ArchitectureNotesData } from '@/components/ui/ArchitectureNotes';
 import '../../styles/demos/astro-data-viewer.css';
 
 interface AstroItem {
@@ -27,7 +27,12 @@ interface AstroItem {
 
 type Language = 'fr' | 'en';
 
-export default function AstroDataViewer() {
+interface AstroDataViewerProps {
+  architectureNotes?: ArchitectureNotesData;
+  lang?: 'fr' | 'en';
+}
+
+export default function AstroDataViewer({ architectureNotes, lang = 'fr' }: AstroDataViewerProps = {}) {
   const [mounted, setMounted] = useState(false);
   const [tab, setTab] = useState<'images' | 'exoplanets'>('images');
   const [search, setSearch] = useState('');
@@ -363,8 +368,7 @@ export default function AstroDataViewer() {
   }
 
   return (
-    <div className="astro-viewer-container" style={{ display: 'flex', width: '100%', minHeight: '100vh', position: 'relative' }}>
-      <ViewSourceButton filename="AstroDataViewer.tsx" />
+    <div className="astro-viewer-container" style={{ display: 'flex', width: '100%', minHeight: '100vh' }}>
       {/* SIDEBAR */}
       <aside className="astro-sidebar">
         <div>

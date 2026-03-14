@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import RichTextEditor from './RichTextEditor';
-import ViewSourceButton from '@/components/ui/ViewSourceButton';
+import type { ArchitectureNotesData } from '@/components/ui/ArchitectureNotes';
 import '../../styles/demos/blog-cms.css';
 
 interface Article {
@@ -29,7 +29,12 @@ interface User {
   role: 'USER' | 'AUTHOR' | 'ADMIN';
 }
 
-export default function BlogCMS() {
+interface BlogCMSProps {
+  architectureNotes?: ArchitectureNotesData;
+  lang?: 'fr' | 'en';
+}
+
+export default function BlogCMS({ architectureNotes, lang = 'fr' }: BlogCMSProps = {}) {
   const { data: session, status } = useSession();
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
@@ -162,8 +167,7 @@ export default function BlogCMS() {
     .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 
   return (
-    <div style={{ position: 'relative' }}>
-      <ViewSourceButton filename="BlogCMS.tsx" />
+    <div>
       <section className="wf-section wf-hero blog-cms-hero">
         <div className="wf-hero-bg">
           <div className="wf-starfield-layer"></div>

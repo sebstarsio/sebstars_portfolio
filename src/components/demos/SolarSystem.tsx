@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { PLANETS_DATA, PlanetData, formatDistance, formatPeriod } from '@/lib/demos/solar-system-data';
-import ViewSourceButton from '@/components/ui/ViewSourceButton';
+import type { ArchitectureNotesData } from '@/components/ui/ArchitectureNotes';
 import '../../styles/demos/solar-system.css';
 
 // Interface simple pour l'animation CSS (gardée pour compatibilité)
@@ -43,7 +43,12 @@ const PLANETS: PlanetSimple[] = PLANETS_DATA.map(planet => {
   };
 });
 
-export default function SolarSystem() {
+interface SolarSystemProps {
+  architectureNotes?: ArchitectureNotesData;
+  lang?: 'fr' | 'en';
+}
+
+export default function SolarSystem({ architectureNotes, lang = 'fr' }: SolarSystemProps = {}) {
   const containerRef = useRef<HTMLDivElement>(null);
   const systemRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
@@ -87,11 +92,9 @@ export default function SolarSystem() {
         const containerRect = containerRef.current.getBoundingClientRect();
         const containerTop = containerRect.top;
 
-        // L'orbite de Neptune fait 900px de diamètre, donc le haut est à 450px au-dessus du centre
-        // On veut que le haut de l'orbite soit juste en dessous du hero
-        // On multiplie par le scale pour tenir compte du zoom
-        const neptuneRadius = 450 * scale;
-        const offset = heroBottom - containerTop - neptuneRadius + 50; // +50px pour descendre un peu
+        // L'orbite de Neptune fait 960px de diamètre (solar-system.css), donc le haut à 480px au-dessus du centre
+        const neptuneRadius = 480 * scale;
+        const offset = heroBottom - containerTop - neptuneRadius + 50;
 
         systemRef.current.style.transform = `translateY(${offset}px) scale3d(${scale}, ${scale}, 1)`;
       }
@@ -133,8 +136,8 @@ export default function SolarSystem() {
       const containerRect = containerRef.current.getBoundingClientRect();
       const containerTop = containerRect.top;
 
-      const neptuneRadius = 450 * scale;
-      const offset = heroBottom - containerTop - neptuneRadius + 50; // +50px pour descendre un peu
+      const neptuneRadius = 480 * scale;
+      const offset = heroBottom - containerTop - neptuneRadius + 50;
 
       systemRef.current.style.transform = `translateY(${offset}px) scale3d(${scale}, ${scale}, 1)`;
     }
@@ -222,8 +225,7 @@ export default function SolarSystem() {
   };
 
   return (
-    <div style={{ position: 'relative' }}>
-      <ViewSourceButton filename="SolarSystem.tsx" />
+    <div>
       <section className="wf-section wf-hero">
         <div className="wf-hero-bg">
           <div className="wf-starfield-layer"></div>

@@ -4,17 +4,17 @@
  * Cohérence: rayons, bordures, glow, spacing.
  */
 
-/* ========== DESIGN SYSTEM LAB ========== */
+/* ========== DESIGN SYSTEM LAB (aligné Lab Identity) ========== */
 .lab-page {
   --lab-radius: 12px;
   --lab-radius-sm: 8px;
-  --lab-glow: rgba(125, 243, 255, 0.4);
-  --lab-glow-violet: rgba(148, 163, 255, 0.35);
-  --lab-bg-glass: rgba(8, 12, 28, 0.4);
-  --lab-border: rgba(125, 243, 255, 0.18);
+  --lab-glow: var(--lab-glow-cyan);
+  --lab-glow-violet: var(--lab-glow-violet);
+  --lab-bg-glass: var(--lab-glass-bg);
+  --lab-border: var(--lab-glass-border);
   --lab-text: var(--text-main);
   --lab-muted: var(--text-muted);
-  --lab-accent: var(--accent);
+  --lab-accent: var(--lab-accent-cyan);
   --lab-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -28,7 +28,7 @@
 .lab-hero-bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(125, 243, 255, 0.08), transparent 55%);
+  background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(6, 182, 212, 0.08), transparent 55%);
   pointer-events: none;
 }
 
@@ -64,11 +64,29 @@
   line-height: 1.6;
 }
 
-/* ========== SHOWROOM SECTIONS ========== */
+/* ========== SHOWROOM SECTIONS (data-lines fond) ========== */
 .lab-showroom {
+  position: relative;
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 1.5rem 4rem;
+  overflow: hidden;
+}
+
+.lab-showroom::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 24px,
+    rgba(6, 182, 212, 0.03) 24px,
+    rgba(6, 182, 212, 0.03) 25px
+  );
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
 }
 
 .lab-section {

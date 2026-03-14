@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import Script from 'next/script';
 import { Orbitron, Space_Grotesk } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
@@ -8,6 +9,7 @@ import ThemeInitializer from '@/components/ThemeInitializer';
 import { StructuredData } from '@/components/StructuredData';
 import Starfield from '@/components/background/Starfield';
 import CookieConsent from '@/components/ui/CookieConsent';
+import StudioModeDetector from '@/components/StudioModeDetector';
 import '@/styles/globals.css';
 
 const orbitron = Orbitron({
@@ -120,6 +122,9 @@ export default function RootLayout({
         <StructuredData type="person" />
         <StructuredData type="website" />
         <ThemeInitializer />
+        <Suspense fallback={null}>
+          <StudioModeDetector />
+        </Suspense>
         <Starfield />
         {/* Cloudflare Web Analytics - Invisible, RGPD-friendly, pas de cookies */}
         {cloudflareToken && (

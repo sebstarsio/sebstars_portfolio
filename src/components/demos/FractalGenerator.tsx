@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import ViewSourceButton from '@/components/ui/ViewSourceButton';
+import type { ArchitectureNotesData } from '@/components/ui/ArchitectureNotes';
 import '../../styles/demos/fractal-generator.css';
 
 type FractalType = 'mandelbrot' | 'julia' | 'sierpinski' | 'koch' | 'burning-ship' | 'newton';
@@ -18,7 +18,12 @@ interface FractalParams {
   juliaCy?: number;
 }
 
-export default function FractalGenerator() {
+interface FractalGeneratorProps {
+  architectureNotes?: ArchitectureNotesData;
+  lang?: 'fr' | 'en';
+}
+
+export default function FractalGenerator({ architectureNotes, lang = 'fr' }: FractalGeneratorProps = {}) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [params, setParams] = useState<FractalParams>({
     type: 'mandelbrot',
@@ -493,8 +498,7 @@ export default function FractalGenerator() {
   };
 
   return (
-    <div style={{ position: 'relative' }}>
-      <ViewSourceButton filename="FractalGenerator.tsx" />
+    <div>
       <section className="wf-section wf-hero">
         <div className="wf-hero-bg">
           <div className="wf-starfield-layer"></div>

@@ -27,12 +27,12 @@ body {
   font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont,
     "SF Pro Text", "Segoe UI", sans-serif;
   
-  /* Fond avec gradient radial (effet cosmique) */
+  /* Fond — palette Deep Space (Lab Identity) */
   background: radial-gradient(
     circle at top,
-    #171e4d 0%,
-    #050716 55%,
-    #03030b 100%
+    var(--lab-bg-ebony) 0%,
+    var(--lab-bg-slate) 50%,
+    var(--lab-bg-zinc) 100%
   );
   
   /* Couleur du texte */

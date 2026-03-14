@@ -2,10 +2,15 @@
 
 import { useEffect, useRef, useState, useCallback, useMemo } from 'react';
 import { CONSTELLATIONS, Constellation, Star, equatorialToCanvas, getMythology } from '@/lib/demos/constellations-data';
-import ViewSourceButton from '@/components/ui/ViewSourceButton';
+import type { ArchitectureNotesData } from '@/components/ui/ArchitectureNotes';
 import '../../styles/demos/constellations.css';
 
-export default function Constellations() {
+interface ConstellationsProps {
+  architectureNotes?: ArchitectureNotesData;
+  lang?: 'fr' | 'en';
+}
+
+export default function Constellations({ architectureNotes, lang = 'fr' }: ConstellationsProps = {}) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [zoom, setZoom] = useState(1.0);
   const [ra0, setRa0] = useState(0);
@@ -616,8 +621,7 @@ export default function Constellations() {
   };
 
   return (
-    <div style={{ position: 'relative' }}>
-      <ViewSourceButton filename="Constellations.tsx" />
+    <div>
       <section className="wf-section wf-hero">
         <div className="wf-hero-bg">
           <div className="wf-starfield-layer"></div>

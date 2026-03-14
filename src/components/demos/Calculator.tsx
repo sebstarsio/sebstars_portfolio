@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import ViewSourceButton from '@/components/ui/ViewSourceButton';
+import type { ArchitectureNotesData } from '@/components/ui/ArchitectureNotes';
 import '../../styles/demos/calculator.css';
 
 type CalculatorMode = 'normal' | 'scientific';
@@ -74,7 +74,12 @@ const scientificButtons: CalculatorButton[] = [
   { value: 'clear', type: 'scientific', display: 'C', scientific: true, row: 5, col: 7 },
 ];
 
-export default function Calculator() {
+interface CalculatorProps {
+  architectureNotes?: ArchitectureNotesData;
+  lang?: 'fr' | 'en';
+}
+
+export default function Calculator({ architectureNotes, lang = 'fr' }: CalculatorProps = {}) {
   const [mode, setMode] = useState<CalculatorMode>('normal');
   const [display, setDisplay] = useState('0');
   const [previousValue, setPreviousValue] = useState<number | null>(null);
@@ -305,8 +310,7 @@ export default function Calculator() {
     : normalButtons;
 
   return (
-    <div style={{ position: 'relative' }}>
-      <ViewSourceButton filename="Calculator.tsx" />
+    <div>
       <section className="wf-section wf-hero">
         <div className="wf-hero-bg">
           <div className="wf-starfield-layer"></div>

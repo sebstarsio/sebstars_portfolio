@@ -11,6 +11,8 @@
 
 /* Section système solaire prend toute la hauteur sans scroll */
 section.wf-section.wf-projects {
+  position: relative;
+  z-index: 2; /* Au-dessus du Hero pour éviter chevauchement sur mobile */
   height: 100vh;
   max-height: 100vh;
   overflow: hidden;
@@ -62,32 +64,33 @@ section.wf-section.wf-projects .wf-inner {
    SOLEIL
    ======================================== */
 
+/* Soleil : présence forte sans écraser la scène */
 .sun {
   position: absolute;
-  width: 80px;
-  height: 80px;
-  background: radial-gradient(circle, #ffd700, #ff8c00, #ff4500);
+  width: 72px;
+  height: 72px;
+  background: radial-gradient(circle at 30% 30%, #fff5cc, #ffd700 40%, #ff8c00 75%, #e67e22);
   border-radius: 50%;
-  box-shadow: 0 0 40px #ffd700, 0 0 60px #ff8c00;
-  animation: sun-glow 2s ease-in-out infinite alternate;
+  box-shadow: 0 0 32px rgba(255, 215, 0, 0.7), 0 0 56px rgba(255, 140, 0, 0.4);
+  animation: sun-glow 2.5s ease-in-out infinite alternate;
   will-change: box-shadow;
   transform: translate3d(0, 0, 0);
   cursor: pointer;
-  z-index: 25; /* Plus élevé que les planètes pour être cliquable */
-  pointer-events: auto; /* Assure que le soleil est cliquable */
+  z-index: 25;
+  pointer-events: auto;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sun:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
 }
 
 @keyframes sun-glow {
   from {
-    box-shadow: 0 0 40px #ffd700, 0 0 60px #ff8c00;
+    box-shadow: 0 0 32px rgba(255, 215, 0, 0.7), 0 0 56px rgba(255, 140, 0, 0.4);
   }
   to {
-    box-shadow: 0 0 60px #ffd700, 0 0 90px #ff8c00;
+    box-shadow: 0 0 48px rgba(255, 215, 0, 0.8), 0 0 72px rgba(255, 140, 0, 0.5);
   }
 }
 
@@ -95,14 +98,15 @@ section.wf-section.wf-projects .wf-inner {
    ORBITES
    ======================================== */
 
+/* Orbites : compression interne, respiration externe + déphasage initial pour asymétrie */
 .orbit {
   position: absolute;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 50%;
   animation: orbit-rotate 20s linear infinite;
   will-change: transform;
   transform: translate3d(0, 0, 0);
-  pointer-events: none; /* Les orbites ne doivent pas bloquer les clics */
+  pointer-events: none;
 }
 
 .orbit.paused {
@@ -110,51 +114,59 @@ section.wf-section.wf-projects .wf-inner {
 }
 
 .mercury-orbit {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   animation-duration: 8s;
+  animation-delay: 0s;
 }
 
 .venus-orbit {
-  width: 300px;
-  height: 300px;
+  width: 265px;
+  height: 265px;
   animation-duration: 12s;
+  animation-delay: -1.6s;
 }
 
 .earth-orbit {
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   animation-duration: 16s;
+  animation-delay: -3.2s;
 }
 
 .mars-orbit {
-  width: 500px;
-  height: 500px;
+  width: 430px;
+  height: 430px;
   animation-duration: 20s;
+  animation-delay: -5s;
 }
 
 .jupiter-orbit {
-  width: 600px;
-  height: 600px;
+  width: 570px;
+  height: 570px;
   animation-duration: 30s;
+  animation-delay: -7.5s;
 }
 
 .saturn-orbit {
   width: 700px;
   height: 700px;
   animation-duration: 40s;
+  animation-delay: -10s;
 }
 
 .uranus-orbit {
-  width: 800px;
-  height: 800px;
+  width: 830px;
+  height: 830px;
   animation-duration: 50s;
+  animation-delay: -12.5s;
 }
 
 .neptune-orbit {
-  width: 900px;
-  height: 900px;
+  width: 960px;
+  height: 960px;
   animation-duration: 60s;
+  animation-delay: -15s;
 }
 
 @keyframes orbit-rotate {
@@ -170,6 +182,7 @@ section.wf-section.wf-projects .wf-inner {
    PLANÈTES
    ======================================== */
 
+/* Planètes : tailles différenciées pour lisibilité et hiérarchie visuelle */
 .planet {
   position: absolute;
   top: -10px;
@@ -181,52 +194,76 @@ section.wf-section.wf-projects .wf-inner {
   will-change: transform;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  z-index: 20; /* Augmenté pour être au-dessus des orbites */
-  pointer-events: auto; /* Assure que les planètes sont cliquables */
+  z-index: 20;
+  pointer-events: auto;
 }
 
 .planet:hover {
-  transform: translate3d(-50%, 0, 0) scale3d(1.5, 1.5, 1);
+  transform: translate3d(-50%, 0, 0) scale3d(1.4, 1.4, 1);
 }
 
 .mercury {
-  background: #8c7853;
-  box-shadow: 0 0 4px #8c7853;
+  width: 14px;
+  height: 14px;
+  top: -7px;
+  background: radial-gradient(circle at 30% 30%, #a89878, #8c7853);
+  box-shadow: 0 0 6px rgba(140, 120, 83, 0.8);
 }
 
 .venus {
-  background: #e6be8a;
-  box-shadow: 0 0 4px #e6be8a;
+  width: 18px;
+  height: 18px;
+  top: -9px;
+  background: radial-gradient(circle at 30% 30%, #f0e0c0, #e6be8a);
+  box-shadow: 0 0 6px rgba(230, 190, 138, 0.8);
 }
 
 .earth {
-  background: #4b6cb7;
-  box-shadow: 0 0 4px #4b6cb7;
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  background: radial-gradient(circle at 30% 30%, #5a7cb7, #4b6cb7);
+  box-shadow: 0 0 6px rgba(75, 108, 183, 0.8);
 }
 
 .mars {
-  background: #c1440e;
-  box-shadow: 0 0 4px #c1440e;
+  width: 17px;
+  height: 17px;
+  top: -8.5px;
+  background: radial-gradient(circle at 30% 30%, #d15414, #c1440e);
+  box-shadow: 0 0 6px rgba(193, 68, 14, 0.8);
 }
 
 .jupiter {
-  background: #d8ca9d;
-  box-shadow: 0 0 4px #d8ca9d;
+  width: 30px;
+  height: 30px;
+  top: -15px;
+  background: radial-gradient(circle at 30% 30%, #e8dcb0, #d8ca9d);
+  box-shadow: 0 0 8px rgba(216, 202, 157, 0.7), 0 0 16px rgba(216, 202, 157, 0.3);
 }
 
 .saturn {
-  background: #f4d03f;
-  box-shadow: 0 0 4px #f4d03f;
+  width: 26px;
+  height: 26px;
+  top: -13px;
+  background: radial-gradient(circle at 30% 30%, #f8e060, #f4d03f);
+  box-shadow: 0 0 8px rgba(244, 208, 63, 0.7), 0 0 14px rgba(244, 208, 63, 0.3);
 }
 
 .uranus {
-  background: #85c1e9;
-  box-shadow: 0 0 4px #85c1e9;
+  width: 22px;
+  height: 22px;
+  top: -11px;
+  background: radial-gradient(circle at 30% 30%, #95c9ed, #85c1e9);
+  box-shadow: 0 0 6px rgba(133, 193, 233, 0.8);
 }
 
 .neptune {
-  background: #5dade2;
-  box-shadow: 0 0 4px #5dade2;
+  width: 22px;
+  height: 22px;
+  top: -11px;
+  background: radial-gradient(circle at 30% 30%, #6db8e8, #5dade2);
+  box-shadow: 0 0 6px rgba(93, 173, 226, 0.8);
 }
 
 /* ========================================
@@ -835,6 +872,7 @@ section.wf-section.wf-projects .wf-inner {
   section.wf-section.wf-projects {
     height: 100vh;
     max-height: 100vh;
+    min-height: 0;
   }
 
   .solar-system-container {
@@ -842,6 +880,10 @@ section.wf-section.wf-projects .wf-inner {
     height: 100%;
     min-height: 0;
     margin: 0;
+    overflow: hidden;
+    /* Scale global pour que le système (orbites jusqu'à 960px) tienne sur mobile */
+    transform: scale(0.38);
+    transform-origin: center center;
   }
 
   .neptune-orbit {
@@ -886,6 +928,14 @@ section.wf-section.wf-projects .wf-inner {
     max-height: 25vh;
     max-width: calc(100% - 1rem);
     padding: 0.75rem;
+  }
+}
+
+/* Très petit écran : scale encore réduit pour cadrage correct */
+@media (max-width: 480px) {
+  .solar-system-container {
+    transform: scale(0.28);
+    transform-origin: center center;
   }
 }
 

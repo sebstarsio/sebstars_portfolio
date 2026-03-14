@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getAllProjects } from '@/lib/projects';
 import Header from '@/components/Header';
+import DemoTechnicalBadges from '@/components/DemoTechnicalBadges';
 import { AnalyticsTracker } from '@/components/AnalyticsTracker';
 import SolarSystem from '@/components/demos/SolarSystem';
 import Calculator from '@/components/demos/Calculator';
@@ -94,27 +95,30 @@ export default async function DemoPage({ params }: DemoPageProps) {
     notFound();
   }
 
+  const notes = project.architectureNotes;
+  const lang = 'fr' as const;
+
   // Rendre le composant de démo approprié
   const renderDemo = () => {
     switch (id) {
       case 'solar-system':
-        return <SolarSystem />;
+        return <SolarSystem architectureNotes={notes} lang={lang} />;
       case 'calculatrice':
-        return <Calculator />;
+        return <Calculator architectureNotes={notes} lang={lang} />;
       case 'constellations':
-        return <Constellations />;
+        return <Constellations architectureNotes={notes} lang={lang} />;
       case 'blog-cms':
-        return <BlogCMS />;
+        return <BlogCMS architectureNotes={notes} lang={lang} />;
       case 'ecommerce':
-        return <Ecommerce />;
+        return <Ecommerce architectureNotes={notes} lang={lang} />;
       case 'dashboard':
-        return <Dashboard />;
+        return <Dashboard architectureNotes={notes} lang={lang} />;
       case 'three-body':
-        return <ThreeBody />;
+        return <ThreeBody architectureNotes={notes} lang={lang} />;
       case 'astro-data-viewer':
-        return <AstroDataViewer />;
+        return <AstroDataViewer architectureNotes={notes} lang={lang} />;
       case 'fractal-generator':
-        return <FractalGenerator />;
+        return <FractalGenerator architectureNotes={notes} lang={lang} />;
       default:
         return <DefaultDemo project={project} />;
     }
@@ -124,6 +128,13 @@ export default async function DemoPage({ params }: DemoPageProps) {
     <>
       <AnalyticsTracker path={`/demo/${id}`} />
       <Header />
+      <DemoTechnicalBadges
+        project={{
+          id: project.id,
+          architectureNotes: project.architectureNotes,
+          githubUrl: project.githubUrl,
+        }}
+      />
       <main className="wf-main">
         {renderDemo()}
       </main>

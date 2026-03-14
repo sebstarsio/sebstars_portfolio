@@ -1,0 +1,82 @@
+/**
+ * SCREENSHOT STUDIO MODE
+ * Activé via ?studio=1 → body[data-studio="true"]
+ * Applique le design system 54.1 (Deep Space, grille Lab) et masque les éléments
+ * parasites pour des captures cinématographiques propres.
+ */
+
+/* ========== FOND DEEP SPACE UNIFORME ========== */
+body[data-studio="true"] {
+  background: radial-gradient(
+    ellipse 120% 100% at 50% 0%,
+    var(--lab-bg-ebony) 0%,
+    var(--lab-bg-slate) 45%,
+    var(--lab-bg-zinc) 100%
+  ) !important;
+}
+
+/* ========== GRILLE LAB HD (subtil, lisible) ========== */
+body[data-studio="true"]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(6, 182, 212, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 30%, black 15%, transparent 65%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 30%, black 15%, transparent 65%);
+}
+
+/* ========== NETTOYAGE INTERFACE ========== */
+/* Masquer navbar / header */
+body[data-studio="true"] .wf-header-zone,
+body[data-studio="true"] .wf-header {
+  display: none !important;
+}
+
+/* Masquer bandeau RGPD */
+body[data-studio="true"] .cookie-consent {
+  display: none !important;
+}
+
+/* Masquer lien Retour sur les pages projet (capture propre) */
+body[data-studio="true"] main .wf-inner > a.btn-ghost:first-of-type {
+  display: none !important;
+}
+
+/* Masquer scrollbars */
+body[data-studio="true"] {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+body[data-studio="true"]::-webkit-scrollbar {
+  display: none;
+}
+
+/* Contenu au-dessus de la grille + léger padding haut (header masqué) */
+body[data-studio="true"] main,
+body[data-studio="true"] .wf-main {
+  position: relative;
+  z-index: 1;
+  padding-top: 2rem;
+}
+
+/* ========== INTENSIFICATION LÉGÈRE DU GLOW ========== */
+body[data-studio="true"] .rail-card,
+body[data-studio="true"] [class*="lab-glass"] {
+  box-shadow: 0 0 24px rgba(6, 182, 212, 0.2), 0 0 48px rgba(6, 182, 212, 0.08), var(--lab-glass-highlight);
+}
+
+/* ========== VIGNETTE CINÉMATOGRAPHIQUE (subtil) ========== */
+body[data-studio="true"]::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  box-shadow: inset 0 0 15vh 2px rgba(0, 0, 0, 0.25);
+  border-radius: 0;
+}

@@ -45,4 +45,3 @@
   <!-- Icône scientifique (positionnée à l'intérieur du cadre calculatrice : rect 60–260) -->
   <text x="205" y="100" font-family="Arial" font-size="22" fill="#ffffff" opacity="0.8">sin</text>
 </svg>
-

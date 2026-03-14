@@ -36,9 +36,9 @@ const ProjectCard = memo(function ProjectCard({
     <article key={id} className="rail-card" data-project-id={project.id}>
       <div className="rail-pill">{categoryText}</div>
       <div className="rail-card-image">
-        {project.image ? (
+        {(project.thumbnailUrl ?? project.image) ? (
           <Image
-            src={project.image}
+            src={project.thumbnailUrl ?? project.image ?? ''}
             alt={`${project.title} - ${project.subtitle || project.description.substring(0, 100)}`}
             fill
             className="rail-card-thumbnail"

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import ViewSourceButton from '@/components/ui/ViewSourceButton';
+import type { ArchitectureNotesData } from '@/components/ui/ArchitectureNotes';
 import '../../styles/demos/dashboard.css';
 
 interface DataPoint {
@@ -21,7 +21,12 @@ interface Metric {
 type ChartType = 'line' | 'bar' | 'area' | 'pie';
 type TimeRange = '7d' | '30d' | '90d' | '1y';
 
-export default function Dashboard() {
+interface DashboardProps {
+  architectureNotes?: ArchitectureNotesData;
+  lang?: 'fr' | 'en';
+}
+
+export default function Dashboard({ architectureNotes, lang = 'fr' }: DashboardProps = {}) {
   const [metrics, setMetrics] = useState<Metric[]>([]);
   const [chartData, setChartData] = useState<DataPoint[]>([]);
   const [chartType, setChartType] = useState<ChartType>('line');
@@ -453,8 +458,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div style={{ position: 'relative' }}>
-      <ViewSourceButton filename="Dashboard.tsx" />
+    <div>
       <section className="wf-section wf-hero">
         <div className="wf-hero-bg">
           <div className="wf-starfield-layer"></div>

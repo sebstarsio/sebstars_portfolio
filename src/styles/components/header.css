@@ -337,4 +337,5 @@
   .wf-logo-text {
     font-size: 1.2rem;
   }
+  /* garder l’icône (aria-label reste sur le bouton/lien) */
 }

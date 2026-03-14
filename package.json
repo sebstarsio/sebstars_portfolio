@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "log:step2": "node tools/rebuild/generate_step_log_02.mjs"
+    "log:step2": "node tools/rebuild/generate_step_log_02.mjs",
+    "screenshots": "tsx scripts/generateProjectScreenshots.ts",
+    "studio-screenshots": "tsx scripts/generateStudioScreenshots.ts"
   },
   "dependencies": {
     "@tiptap/extension-link": "^2.27.2",
@@ -29,7 +31,10 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "playwright": "^1.58.2",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }
