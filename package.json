@@ -10,6 +10,7 @@
     "log:step2": "node tools/rebuild/generate_step_log_02.mjs",
     "screenshots": "tsx scripts/generateProjectScreenshots.ts",
     "studio-screenshots": "tsx scripts/generateStudioScreenshots.ts",
+    "capture-demo": "tsx scripts/captureDemoOnly.ts",
     "assets:build": "node scripts/post-process-assets.js"
   },
   "dependencies": {
@@ -19,6 +20,7 @@
     "@tiptap/starter-kit": "^2.27.2",
     "@types/three": "^0.183.1",
     "@vercel/analytics": "^2.0.1",
+    "lucide-react": "^0.577.0",
     "next": "16.1.6",
     "next-auth": "^4.24.13",
     "react": "19.2.3",

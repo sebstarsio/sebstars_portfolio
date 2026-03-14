@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import { Cpu } from 'lucide-react';
 
 export interface ArchitectureNotesContent {
   algorithm: string;
@@ -70,11 +71,7 @@ export default function ArchitectureNotes({ notes, lang = 'fr' }: ArchitectureNo
         aria-haspopup="dialog"
       >
         <span className="architecture-notes-badge-icon" aria-hidden>
-          {/* Icône Terminal (style Lucide) */}
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="14" height="14">
-            <polyline points="4 17 10 11 4 5" />
-            <line x1="12" y1="19" x2="20" y2="19" />
-          </svg>
+          <Cpu size={14} strokeWidth={2} />
         </span>
         <span className="architecture-notes-badge-label">{badgeLabel}</span>
       </button>
