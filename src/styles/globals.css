@@ -1,0 +1,30 @@
+/**
+ * STYLES GLOBAUX
+ * 
+ * Fichier principal qui importe tous les styles CSS
+ */
+
+@import './variables.css';
+@import './main.css';
+@import './animations.css';
+@import './components/header.css';
+@import './components/hero.css';
+@import './components/projects.css';
+@import './components/services.css';
+@import './components/contact.css';
+@import './components/about.css';
+@import './components/lab.css';
+@import './components/error-boundary.css';
+@import './components/waves.css';
+@import './components/cookie-consent.css';
+@import './demos/solar-system.css';
+@import './demos/calculator.css';
+@import './demos/constellations.css';
+@import './demos/blog-cms.css';
+@import './demos/rich-text-editor.css';
+@import './demos/ecommerce.css';
+@import './demos/dashboard.css';
+@import './demos/three-body.css';
+@import './demos/astro-data-viewer.css';
+@import './demos/fractal-generator.css';
+

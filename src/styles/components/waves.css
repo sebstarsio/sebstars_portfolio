@@ -1,0 +1,43 @@
+/**
+ * STYLES VAGUES SVG
+ * 
+ * Styles pour les vagues SVG qui séparent les sections.
+ * Les vagues créent une transition fluide entre les sections.
+ */
+
+.wf-wave-divider {
+  position: absolute;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.wf-wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 120px;
+}
+
+.wf-wave-divider path {
+  opacity: 0.98;
+}
+
+.wf-wave-bottom {
+  bottom: -1px;
+}
+
+.wf-wave-top {
+  top: -75px;
+}
+
+.theme-light .wf-wave-divider svg stop {
+  stop-color: var(--bg-dark);
+}
+
+@media (max-width: 780px) {
+  .wf-wave-divider svg {
+    height: 80px;
+  }
+}
+

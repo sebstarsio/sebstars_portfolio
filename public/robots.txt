@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Sitemap généré dynamiquement par Next.js
+Sitemap: https://sebstars.io/sitemap.xml
+

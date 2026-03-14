@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="ecommerceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" fill="url(#ecommerceGrad)" rx="20"/>
+  <rect x="40" y="50" width="50" height="50" fill="white" opacity="0.9" rx="5"/>
+  <circle cx="65" cy="75" r="12" fill="#8b5cf6" opacity="0.3"/>
+  <rect x="110" y="50" width="50" height="50" fill="white" opacity="0.9" rx="5"/>
+  <circle cx="135" cy="75" r="12" fill="#8b5cf6" opacity="0.3"/>
+  <rect x="40" y="120" width="50" height="50" fill="white" opacity="0.9" rx="5"/>
+  <circle cx="65" cy="145" r="12" fill="#8b5cf6" opacity="0.3"/>
+  <rect x="110" y="120" width="50" height="50" fill="white" opacity="0.9" rx="5"/>
+  <circle cx="135" cy="145" r="12" fill="#8b5cf6" opacity="0.3"/>
+  <circle cx="170" cy="40" r="12" fill="white" opacity="0.9"/>
+  <text x="170" y="46" font-family="Arial" font-size="12" fill="#8b5cf6" text-anchor="middle" font-weight="bold">🛒</text>
+  <circle cx="170" cy="40" r="15" fill="none" stroke="white" stroke-width="2" opacity="0.5"/>
+</svg>
+

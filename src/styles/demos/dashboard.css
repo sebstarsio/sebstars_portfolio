@@ -1,0 +1,302 @@
+/**
+ * STYLES SPÉCIFIQUES - DASHBOARD
+ */
+
+/* Débloquer le scroll : la section dashboard hérite des règles (height: 100vh, overflow: hidden)
+   des autres démos. On annule pour que la page s'étende et soit scrollable. */
+section.wf-section.wf-projects:has(.dashboard-wrapper) {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  display: block !important;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
+section.wf-section.wf-projects:has(.dashboard-wrapper) .wf-inner {
+  flex: none !important;
+  min-height: 0 !important;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Section dashboard (sans :has) : largeur pour compatibilité */
+section.wf-section.wf-projects {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
+section.wf-section.wf-projects .wf-inner {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 2rem;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dashboard-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.dashboard-header h2 {
+  font-family: var(--font-orbitron);
+  font-size: 2rem;
+  color: var(--accent);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.dashboard-btn {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(139, 92, 246, 0.9));
+  border: 1px solid rgba(125, 243, 255, 0.22);
+  border-radius: 10px;
+  color: #ffffff;
+  font-family: var(--font-space-grotesk);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.2s ease;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2);
+}
+
+.dashboard-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(59, 130, 246, 0.35), 0 0 0 1px rgba(125, 243, 255, 0.12);
+  border-color: rgba(125, 243, 255, 0.35);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* KPI cards — glassmorphism premium (aligné E-commerce, Blog/CMS, thème cosmique) */
+.metric-card {
+  background: rgba(8, 12, 28, 0.42);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(125, 243, 255, 0.15);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.22s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.metric-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(125, 243, 255, 0.28);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(125, 243, 255, 0.06);
+}
+
+.metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.metric-label {
+  color: rgba(180, 200, 230, 0.85);
+  font-family: var(--font-space-grotesk);
+  font-size: 0.88rem;
+  letter-spacing: 0.01em;
+}
+
+.metric-trend {
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.metric-card:hover .metric-trend {
+  transform: scale(1.05);
+}
+
+.metric-trend.trend-up {
+  color: #10b981;
+}
+
+.metric-trend.trend-down {
+  color: #ef4444;
+}
+
+.metric-trend.trend-stable {
+  color: rgba(180, 200, 230, 0.6);
+}
+
+.metric-value {
+  font-size: 1.85rem;
+  font-weight: 700;
+  font-family: var(--font-orbitron);
+  margin: 0;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+/* Zone graphiques — conteneur premium, charts plus intégrés */
+.chart-container {
+  background: rgba(8, 12, 28, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(125, 243, 255, 0.12);
+  border-radius: 12px;
+  padding: 2rem 2.25rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chart-container:hover {
+  border-color: rgba(125, 243, 255, 0.18);
+}
+
+.chart-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.chart-controls h3 {
+  font-family: var(--font-orbitron);
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.chart-options {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Filtres (selects) — style premium glass, focus propre */
+.chart-select {
+  padding: 0.6rem 1.1rem;
+  background: rgba(5, 7, 22, 0.6);
+  border: 1px solid rgba(125, 243, 255, 0.2);
+  border-radius: 10px;
+  color: rgba(230, 240, 255, 0.95);
+  font-family: var(--font-space-grotesk);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease, background 0.2s ease;
+}
+
+.chart-select:hover {
+  border-color: rgba(125, 243, 255, 0.35);
+  background: rgba(5, 7, 22, 0.75);
+}
+
+.chart-select:focus {
+  outline: none;
+  border-color: rgba(125, 243, 255, 0.5);
+  box-shadow: 0 0 0 3px rgba(125, 243, 255, 0.12);
+}
+
+#metrics-chart,
+#pie-chart {
+  width: 100%;
+  height: 300px;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Accessibilité — focus clavier (aligné autres démos) */
+.dashboard-wrapper button:focus,
+.dashboard-wrapper .chart-select:focus {
+  outline: none;
+}
+
+.dashboard-wrapper button:focus-visible,
+.dashboard-wrapper .chart-select:focus-visible {
+  outline: 2px solid rgba(125, 243, 255, 0.85);
+  outline-offset: 2px;
+}
+
+.dashboard-wrapper .chart-select:focus-visible {
+  border-color: rgba(125, 243, 255, 0.5);
+  box-shadow: 0 0 0 3px rgba(125, 243, 255, 0.15);
+}
+
+@media (max-width: 768px) {
+  .dashboard-wrapper {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .metric-card {
+    padding: 1.25rem;
+  }
+
+  .metric-value {
+    font-size: 1.65rem;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-actions {
+    width: 100%;
+  }
+
+  .dashboard-btn {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .chart-container {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .chart-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .chart-options {
+    width: 100%;
+  }
+
+  .chart-select {
+    flex: 1;
+    min-width: 150px;
+  }
+}
+

@@ -1,0 +1,400 @@
+/**
+ * ABOUT PAGE — Page manifeste SebStars
+ * Layout asymétrique, glassmorphism premium, timeline parcours.
+ * Cohérent avec l'univers cosmique du portfolio.
+ */
+
+/* ========== CONTAINER ========== */
+.about-page {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding-bottom: 4rem;
+}
+
+/* ========== INTRO ASYMÉTRIQUE ========== */
+.about-intro {
+  position: relative;
+  padding: clamp(3rem, 8vw, 5rem) 1.5rem clamp(4rem, 10vw, 6rem);
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+}
+
+.about-intro-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(125, 243, 255, 0.06), transparent 50%),
+              radial-gradient(ellipse 60% 40% at 20% 70%, rgba(255, 148, 230, 0.05), transparent 45%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-intro-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin-left: clamp(1.5rem, 6vw, 4rem);
+  margin-right: auto;
+}
+
+.about-eyebrow {
+  font-family: var(--font-orbitron);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.about-title {
+  font-family: var(--font-orbitron);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-main);
+  margin-bottom: 1.25rem;
+}
+
+.about-title-accent {
+  color: var(--accent);
+  position: relative;
+}
+
+.about-lead {
+  font-family: var(--font-space-grotesk);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 540px;
+}
+
+/* ========== GLASS PANELS (usage limité pour perfs) ========== */
+.about-glass {
+  background: rgba(8, 12, 28, 0.35);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(125, 243, 255, 0.12);
+  border-radius: var(--radius-card);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25),
+              0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-glass:hover {
+  border-color: rgba(125, 243, 255, 0.22);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3),
+              0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+}
+
+.about-section-title {
+  font-family: var(--font-orbitron);
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.about-section-title-center {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* ========== MANIFESTO ========== */
+.about-manifesto {
+  padding: 0 1.5rem 3rem;
+}
+
+.about-glass-manifesto {
+  max-width: 680px;
+  margin-left: clamp(2rem, 12vw, 8rem);
+  margin-right: 1.5rem;
+  padding: 2rem 2.25rem;
+}
+
+.about-manifesto-text {
+  font-family: var(--font-space-grotesk);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-main);
+}
+
+/* ========== TIMELINE ========== */
+.about-timeline-section {
+  padding: 3rem 1.5rem 4rem;
+}
+
+.about-timeline {
+  position: relative;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.about-timeline-line {
+  position: absolute;
+  left: 1.25rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(125, 243, 255, 0.25) 10%,
+    rgba(125, 243, 255, 0.5) 50%,
+    rgba(125, 243, 255, 0.25) 90%,
+    transparent 100%
+  );
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.about-timeline-node {
+  position: relative;
+  padding-left: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+.about-timeline-node:last-child {
+  margin-bottom: 0;
+}
+
+.about-timeline-node-marker {
+  position: absolute;
+  left: 0.5rem;
+  top: 1.75rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 16px rgba(125, 243, 255, 0.5);
+  border: 2px solid rgba(8, 12, 28, 0.9);
+  z-index: 2;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-timeline-node:hover .about-timeline-node-marker {
+  transform: scale(1.2);
+  box-shadow: 0 0 24px rgba(125, 243, 255, 0.7);
+}
+
+.about-timeline-card {
+  padding: 1.5rem 1.75rem;
+  transition: transform 0.25s ease;
+}
+
+.about-timeline-node:hover .about-timeline-card {
+  transform: translateX(4px);
+}
+
+.about-timeline-year {
+  font-family: var(--font-orbitron);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.about-timeline-title {
+  font-family: var(--font-orbitron);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.about-timeline-desc {
+  font-family: var(--font-space-grotesk);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* ========== EXPERTISE GRID ASYMÉTRIQUE ========== */
+.about-expertise {
+  padding: 0 1.5rem 3rem;
+}
+
+.about-expertise-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-glass-card {
+  padding: 2rem 2.25rem;
+}
+
+.about-glass-offset-left {
+  margin-right: 2rem;
+  margin-left: clamp(1.5rem, 8vw, 4rem);
+}
+
+.about-glass-offset-right {
+  margin-left: 2rem;
+  margin-right: clamp(1.5rem, 8vw, 4rem);
+}
+
+.about-list {
+  list-style: none;
+  font-family: var(--font-space-grotesk);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text-main);
+}
+
+.about-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.8;
+}
+
+.about-method-text {
+  font-family: var(--font-space-grotesk);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-main);
+}
+
+/* ========== VISION ========== */
+.about-vision {
+  padding: 0 1.5rem 4rem;
+}
+
+.about-glass-vision {
+  max-width: 640px;
+  margin-left: clamp(1.5rem, 10vw, 6rem);
+  margin-right: auto;
+  padding: 2.5rem 2.25rem;
+}
+
+.about-vision-text {
+  font-family: var(--font-space-grotesk);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-main);
+  margin-bottom: 1.75rem;
+}
+
+.about-cta-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.about-cta {
+  display: inline-block;
+  font-family: var(--font-orbitron);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  background: rgba(125, 243, 255, 0.12);
+  border: 1px solid rgba(125, 243, 255, 0.35);
+  color: var(--accent);
+}
+
+.about-cta:hover {
+  background: rgba(125, 243, 255, 0.2);
+  border-color: rgba(125, 243, 255, 0.5);
+  color: var(--text-main);
+}
+
+.about-cta-ghost {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--text-muted);
+}
+
+.about-cta-ghost:hover {
+  border-color: rgba(125, 243, 255, 0.3);
+  color: var(--text-main);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 968px) {
+  .about-intro-inner {
+    margin-left: 1.5rem;
+  }
+
+  .about-glass-manifesto {
+    margin-left: 1.5rem;
+  }
+
+  .about-expertise-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .about-glass-offset-left,
+  .about-glass-offset-right {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .about-glass-vision {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-intro {
+    min-height: auto;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+
+  .about-intro-inner {
+    margin-left: 1rem;
+  }
+
+  .about-manifesto,
+  .about-timeline-section,
+  .about-expertise,
+  .about-vision {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .about-glass-manifesto,
+  .about-glass-card,
+  .about-glass-vision {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .about-timeline-node {
+    padding-left: 2.75rem;
+  }
+
+  .about-timeline-line {
+    left: 0.75rem;
+  }
+
+  .about-timeline-node-marker {
+    left: 0.25rem;
+    width: 12px;
+    height: 12px;
+  }
+}

@@ -1,0 +1,737 @@
+/**
+ * STYLES PROJETS
+ * 
+ * Styles pour la section projets avec le rail sinusoïdal.
+ */
+
+/* Section portfolio principale (pas les pages de démo) */
+section#projects.wf-section.wf-projects {
+  background: radial-gradient(circle at top, #11163f 0%, #050716 45%, #050716 100%) !important;
+  padding-top: 80px !important;
+  padding-bottom: 90px !important;
+  transition: background 0.3s ease;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Page galerie /projects : jonction immédiate sous le header global (pas de bande ni gap).
+   Fond semi-transparent pour laisser apparaître le starfield global tout en gardant l’overlay et la lisibilité. */
+section#projects.projects-gallery-page.wf-section.wf-projects {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+  background: radial-gradient(
+    circle at top,
+    rgba(17, 22, 63, 0.88) 0%,
+    rgba(5, 7, 22, 0.78) 50%,
+    rgba(5, 7, 22, 0.82) 100%
+  ) !important;
+}
+
+/* Wave du hero Projects : commence au bord de la section (pas de débord au-dessus) */
+section#projects.projects-gallery-page .wf-wave-divider.wf-wave-top {
+  top: 0 !important;
+}
+
+section#projects .wf-inner {
+  max-width: 1300px !important;
+  margin: 0 auto !important;
+  padding: 0 22px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Grille pleine page (page /projects) */
+section#projects .projects-full-grid-wrapper {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 60px !important;
+  overflow: visible !important;
+}
+
+section#projects .projects-full-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+  gap: 22px !important;
+  width: 100% !important;
+  max-width: 1300px !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+}
+
+section#projects .projects-full-grid .rail-card {
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 360px !important;
+  justify-self: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+section#projects .projects-full-grid .project-links {
+  display: flex !important;
+  margin-top: 0 !important;
+}
+
+@media (max-width: 760px) {
+  section#projects .projects-full-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  section#projects .projects-full-grid .rail-card {
+    max-width: 100% !important;
+  }
+}
+
+section#projects .wf-section-header {
+  max-width: 800px !important;
+  margin-bottom: 4px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+/* Header Home : titre + lien "Voir tous les projets" */
+section#projects .projects-section-head {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  width: 100% !important;
+}
+
+section#projects .projects-section-head .wf-section-header {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+section#projects .projects-link-all {
+  flex-shrink: 0 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 999px !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  color: var(--accent) !important;
+  border: 1px solid rgba(125, 243, 255, 0.5) !important;
+  background: rgba(15, 20, 60, 0.96) !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+}
+
+section#projects .projects-link-all:hover {
+  background: var(--accent-soft) !important;
+  border-color: var(--accent) !important;
+  color: var(--bg-dark) !important;
+  box-shadow: 0 4px 12px rgba(125, 243, 255, 0.3) !important;
+}
+
+section#projects .wf-section-header .eyebrow {
+  font-size: 0.85rem !important;
+  margin-bottom: 0.6rem !important;
+}
+
+section#projects .wf-section-header h2,
+section#projects .wf-section-header h1.wf-section-header-title {
+  font-family: "Orbitron", "Courier New", "Courier", monospace !important;
+  font-size: clamp(1.9rem, 3vw, 2.4rem) !important;
+  line-height: 1.25 !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.8rem !important;
+}
+
+section#projects .section-lead {
+  font-size: 1rem !important;
+  color: var(--text-muted) !important;
+  margin-top: 0.6rem !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: 1.6 !important;
+}
+
+/* RAIL SINUSOÏDAL */
+section#projects .wf-wave-rail {
+  position: relative !important;
+  margin-top: 0 !important;
+  padding: 50px 0 40px !important;
+  border-radius: 60px 60px 0 0 !important;
+  background: radial-gradient(circle at top, #1a214f 0%, #050716 50%) !important;
+  border-top: 1px solid var(--border-subtle) !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.75) !important;
+  width: 100% !important;
+}
+
+section#projects .wf-rail-svg {
+  position: absolute !important;
+  top: 18px !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  height: 140px !important;
+  opacity: 0.45 !important;
+}
+
+section#projects .wf-rail-svg path {
+  fill: none !important;
+  stroke: rgba(125, 243, 255, 0.9) !important;
+  stroke-width: 2 !important;
+  stroke-linecap: round !important;
+  stroke-dasharray: 6 10 !important;
+  animation: railDash 10s linear infinite !important;
+}
+
+/* CONTENEUR CARROUSEL */
+section#projects .wf-carousel-wrapper {
+  position: relative !important;
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  padding: 0 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 20px !important;
+  margin-top: 40px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* BOUTONS DE NAVIGATION */
+section#projects .wf-carousel-btn {
+  flex-shrink: 0 !important;
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  background: rgba(10, 13, 40, 0.96) !important;
+  border: 1px solid rgba(125, 243, 255, 0.5) !important;
+  color: var(--accent) !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+  z-index: 10 !important;
+}
+
+section#projects .wf-carousel-btn:hover {
+  background: var(--accent-soft) !important;
+  border-color: var(--accent) !important;
+  transform: scale(1.1) !important;
+  box-shadow: 0 4px 12px rgba(125, 243, 255, 0.3) !important;
+}
+
+section#projects .wf-carousel-btn:active {
+  transform: scale(0.95) !important;
+}
+
+section#projects .wf-carousel-btn:disabled {
+  opacity: 0.4 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+section#projects .wf-inner-rail {
+  flex: 1 !important;
+  position: relative !important;
+  overflow: hidden !important; /* Empêche les cartes de dépasser lors du glissement */
+  min-height: 300px !important;
+  width: 100% !important;
+  min-width: 1124px !important; /* Exactement 3 cartes (360px × 3) + 2 gaps (22px × 2) = 1124px */
+  isolation: isolate !important; /* Crée un nouveau contexte d'empilement */
+  contain: layout style paint !important; /* Optimisation : isole le conteneur pour de meilleures performances */
+}
+
+/* TRACK INTERNE POUR L'ANIMATION CSS */
+section#projects .wf-carousel-track {
+  display: flex !important;
+  gap: 22px !important;
+  width: max-content !important; /* Largeur basée sur le contenu (2 sets de cartes) */
+  will-change: transform !important;
+  animation-play-state: running !important; /* Animation active par défaut */
+  /* L'animation CSS sera appliquée dynamiquement par JavaScript */
+}
+
+/* Pause au survol - géré par JavaScript maintenant */
+section#projects .wf-inner-rail:hover .wf-carousel-track {
+  /* La pause sera gérée par JavaScript dans carousel.ts */
+}
+
+/* CARTES PROJETS (Structure identique à portfolio-nextjs) — Largeur vignette : inchangée (width/min-width définis ailleurs, non modifiés ici) */
+section#projects .rail-card {
+  position: relative !important;
+  flex-shrink: 0 !important; /* Empêche les cartes de rétrécir */
+  border-radius: var(--radius-card) !important;
+  background: rgba(10, 13, 40, 0.96) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding: 24px !important; /* p-6 = 24px (comme portfolio-nextjs) */
+  font-size: 0.95rem !important;
+  color: var(--text-muted) !important;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8) !important;
+  transform-origin: center top !important;
+  transform: translateX(0) translateY(0) !important;
+  opacity: 1 !important;
+  transition: transform 0.22s cubic-bezier(0.25, 0.1, 0.25, 1),
+    box-shadow 0.22s cubic-bezier(0.25, 0.1, 0.25, 1),
+    border-color 0.22s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  visibility: visible !important;
+  min-width: 360px !important; /* Taille adaptée pour le contenu portfolio-nextjs — non modifiée */
+  width: 360px !important;
+  box-sizing: border-box !important;
+  z-index: 0 !important;
+  will-change: transform !important; /* Optimisation pour les animations */
+}
+
+section#projects .rail-card:hover {
+  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.88),
+    0 0 0 1px rgba(125, 243, 255, 0.1) !important;
+  transform: translateX(0) translateY(-3px) !important;
+  border-color: rgba(125, 243, 255, 0.18) !important;
+}
+
+/* Badge Projet */
+section#projects .rail-pill {
+  font-family: "Orbitron", "Courier New", "Courier", monospace !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.4rem !important;
+  padding: 0.12rem 0.6rem !important;
+  border-radius: 999px !important;
+  background: rgba(15, 20, 60, 0.96) !important;
+  border: 1px solid rgba(125, 243, 255, 0.5) !important;
+  font-size: 0.7rem !important;
+  margin-bottom: 12px !important; /* mb-3 */
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+  color: var(--text-muted) !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+
+/* Image thumbnail (comme portfolio-nextjs : h-48 = 192px) — dimensions inchangées, pas de débordement */
+section#projects .rail-card-image {
+  position: relative !important;
+  height: 216px !important; /* h-48 = 192px */
+  border-radius: 8px !important; /* rounded-lg */
+  margin-bottom: 16px !important; /* mb-4 */
+  overflow: hidden !important;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%) !important; /* from-blue-500 to-purple-600 */
+  transition: box-shadow 0.26s ease !important;
+}
+
+section#projects .rail-card:hover .rail-card-image {
+  box-shadow: 0 0 18px rgba(125, 243, 255, 0.06) !important;
+}
+
+section#projects .rail-card-thumbnail {
+  object-fit: cover !important;
+  transition: transform 0.26s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
+}
+
+section#projects .rail-card:hover .rail-card-thumbnail {
+  transform: scale(1.03) !important; /* subtil, contenu dans overflow:hidden, pas de changement de gabarit */
+}
+
+section#projects .rail-card-fallback {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+section#projects .rail-card-icon {
+  font-size: 3rem !important; /* text-4xl */
+  color: white !important;
+  font-family: "Orbitron", monospace !important;
+}
+
+/* Titre (comme portfolio-nextjs : text-xl font-orbitron mb-4) */
+section#projects .rail-card-title {
+  font-family: "Orbitron", "Courier New", "Courier", monospace !important;
+  font-size: 1.25rem !important; /* text-xl */
+  margin-bottom: 16px !important; /* mb-4 */
+  color: var(--text-main) !important;
+  font-weight: 600 !important;
+}
+
+/* Description (comme portfolio-nextjs : text-gray-600 dark:text-gray-300 mb-6) */
+section#projects .rail-card-description {
+  margin-bottom: 0 !important;
+  color: var(--text-muted) !important;
+  line-height: 1.6 !important;
+  flex-shrink: 0 !important;
+}
+
+/* Footer de carte : technologies + boutons, poussé en bas pour alignement constant */
+section#projects .rail-card-footer {
+  margin-top: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  flex-shrink: 0 !important;
+  padding-top: 12px !important;
+}
+
+/* Technologies (comme portfolio-nextjs : badges) — alignement et visibilité */
+section#projects .rail-card-technologies {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-bottom: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+section#projects .rail-card-tech-tag {
+  padding: 6px 10px !important; /* inchangé pour ne pas élargir la carte */
+  border-radius: 6px !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  background: rgba(125, 243, 255, 0.16) !important;
+  color: rgba(200, 230, 255, 0.98) !important;
+  border: 1px solid rgba(125, 243, 255, 0.45) !important;
+  box-shadow: 0 0 12px rgba(125, 243, 255, 0.06) !important;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease,
+    background-color 0.2s ease, color 0.2s ease !important;
+}
+
+section#projects .rail-card-tech-tag:hover {
+  box-shadow: 0 0 16px rgba(125, 243, 255, 0.12) !important;
+  border-color: rgba(125, 243, 255, 0.55) !important;
+  background: rgba(125, 243, 255, 0.2) !important;
+}
+
+/* Boutons (comme portfolio-nextjs : flex gap-3) — dans le footer, tout en bas */
+section#projects .project-links {
+  display: flex !important;
+  gap: 12px !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+section#projects .project-link,
+.project-link {
+  padding: 0.5rem 1rem !important; /* conservé pour ne pas provoquer débordement / changement de largeur carte */
+  border-radius: 999px !important;
+  font-size: 0.875rem !important; /* text-sm */
+  text-decoration: none !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease !important;
+  flex: 1 !important; /* flex-1 */
+  text-align: center !important;
+  border: 1px solid transparent !important;
+  cursor: pointer !important;
+  font-weight: 500 !important;
+  min-height: 38px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Bouton "Voir le projet" (comme portfolio-nextjs : btn-primary) */
+section#projects .project-link-demo,
+.project-link-demo {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong)) !important;
+  color: var(--bg-dark) !important;
+  border: 1px solid rgba(125, 243, 255, 0.55) !important;
+  font-weight: 600 !important;
+}
+
+section#projects .project-link-demo:hover,
+.project-link-demo:hover {
+  background: linear-gradient(135deg, var(--accent-strong), var(--accent)) !important;
+  color: var(--bg-dark) !important;
+  box-shadow: 0 4px 14px rgba(125, 243, 255, 0.22) !important;
+  transform: translateY(-1px) !important;
+  border-color: rgba(125, 243, 255, 0.75) !important;
+}
+
+section#projects .project-link-github,
+.project-link-github {
+  background: transparent !important;
+  color: var(--text-muted) !important;
+  border: 1px solid var(--border-subtle) !important;
+}
+
+section#projects .project-link-github:hover,
+.project-link-github:hover {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+/* Bouton "Détails" (comme portfolio-nextjs : btn-secondary) */
+section#projects .project-link-details {
+  background: transparent !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-subtle) !important;
+}
+
+section#projects .project-link-details:hover {
+  background: rgba(125, 243, 255, 0.06) !important;
+  border-color: rgba(125, 243, 255, 0.45) !important;
+  color: var(--accent) !important;
+  box-shadow: 0 2px 10px rgba(125, 243, 255, 0.1) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* MODE CLAIR - Projets */
+.theme-light section#projects.wf-section.wf-projects {
+  background: radial-gradient(circle at top, #e0e7ff 0%, #f0f4f8 45%, #ffffff 100%) !important;
+}
+
+.theme-light section#projects.projects-gallery-page.wf-section.wf-projects {
+  background: radial-gradient(
+    circle at top,
+    rgba(224, 231, 255, 0.9) 0%,
+    rgba(240, 244, 248, 0.88) 50%,
+    rgba(255, 255, 255, 0.9) 100%
+  ) !important;
+}
+
+.theme-light section#projects .wf-section-header h2,
+.theme-light section#projects .wf-section-header h1.wf-section-header-title {
+  color: var(--text-main) !important;
+}
+
+.theme-light section#projects .projects-link-all {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-color: var(--accent) !important;
+  color: var(--text-main) !important;
+}
+
+.theme-light section#projects .projects-link-all:hover {
+  background: var(--accent-soft) !important;
+  border-color: var(--accent-strong) !important;
+  color: var(--bg-dark) !important;
+}
+
+.theme-light section#projects .section-lead {
+  color: var(--text-muted) !important;
+}
+
+.theme-light section#projects .wf-wave-rail {
+  background: radial-gradient(circle at top, #e0e7ff 0%, #f0f4f8 50%) !important;
+  border-color: var(--accent) !important;
+  border-width: 2px !important;
+  box-shadow: 0 -10px 40px var(--accent-soft) !important;
+}
+
+.theme-light section#projects .wf-rail-svg path {
+  stroke: var(--accent) !important;
+  stroke-width: 2.5px !important;
+}
+
+.theme-light section#projects .rail-card {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-color: var(--accent) !important;
+  border-width: 2px !important;
+  color: var(--text-muted) !important;
+  box-shadow: 0 18px 40px var(--accent-soft) !important;
+}
+
+.theme-light section#projects .rail-card:hover {
+  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.12),
+    0 0 0 1px var(--accent-soft) !important;
+  border-color: var(--accent) !important;
+}
+
+.theme-light section#projects .rail-card-title {
+  color: var(--text-main) !important;
+  font-weight: 600 !important;
+}
+
+.theme-light section#projects .rail-card-description {
+  color: var(--text-muted) !important;
+}
+
+.theme-light section#projects .rail-card-description {
+  color: var(--text-muted) !important;
+}
+
+.theme-light section#projects .rail-card-tech-tag {
+  background: var(--accent-soft) !important;
+  color: var(--text-main) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 12px var(--accent-soft) !important;
+}
+
+.theme-light section#projects .rail-card-tech-tag:hover {
+  box-shadow: 0 0 16px var(--accent-soft) !important;
+  border-color: var(--accent-strong) !important;
+  background: var(--accent-soft-2) !important;
+}
+
+.theme-light section#projects .rail-pill {
+  background: var(--accent-soft) !important;
+  border-color: var(--accent) !important;
+  border-width: 2px !important;
+  color: var(--text-main) !important;
+  font-weight: 600 !important;
+}
+
+.theme-light section#projects .rail-card ul li {
+  background: var(--accent-soft) !important;
+  border-color: var(--accent) !important;
+  border-width: 1.5px !important;
+  color: var(--text-main) !important;
+  font-weight: 500 !important;
+}
+
+.theme-light section#projects .project-link-details {
+  background: transparent !important;
+  color: var(--text-muted) !important;
+  border-color: var(--border-subtle) !important;
+}
+
+.theme-light section#projects .project-link-details:hover {
+  background: var(--accent-soft) !important;
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+  box-shadow: 0 2px 10px var(--accent-soft) !important;
+}
+
+/* MODE CLAIR - Boutons carousel */
+.theme-light section#projects .wf-carousel-btn {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-color: var(--accent) !important;
+  border-width: 2px !important;
+  color: var(--text-main) !important;
+}
+
+.theme-light section#projects .wf-carousel-btn:hover {
+  background: var(--accent-soft) !important;
+  border-color: var(--accent-strong) !important;
+  box-shadow: 0 4px 12px var(--accent-soft) !important;
+}
+
+/* RESPONSIVE - Carousel */
+@media (max-width: 980px) {
+  section#projects .wf-carousel-wrapper {
+    padding: 0 50px !important;
+  }
+
+  section#projects .wf-inner-rail {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  section#projects .wf-carousel-btn {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  section#projects .wf-carousel-wrapper {
+    padding: 0 40px !important;
+  }
+
+  section#projects .wf-inner-rail {
+    grid-template-columns: 1fr !important;
+  }
+
+  section#projects .wf-carousel-btn {
+    width: 36px !important;
+    height: 36px !important;
+  }
+}
+
+/* ========== DIAGNOSTIC #13.3 — Forçage visuel galerie /projects ========== */
+.projects-full-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+  gap: 30px !important;
+  overflow: visible !important;
+  height: auto !important;
+  max-height: none !important;
+}
+
+.projects-full-grid .rail-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: auto !important;
+  min-height: 450px !important;
+  overflow: visible !important;
+  position: relative !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.projects-full-grid .project-links {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: relative !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  z-index: 10 !important;
+}
+/* ========== Libération galerie /projects — parents sans overflow/hauteur ========== */
+.projects-gallery-page,
+.projects-full-grid-wrapper,
+.projects-section {
+  overflow: visible !important;
+  height: auto !important;
+  min-height: 100vh !important;
+  max-height: none !important;
+  contain: none !important;
+}
+
+.projects-full-grid-wrapper {
+  max-width: 1300px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 22px 100px !important;
+  box-sizing: border-box !important;
+}
+
+.projects-gallery-page .wf-inner,
+.projects-full-grid-wrapper .wf-inner,
+.projects-section .wf-inner {
+  overflow: visible !important;
+  height: auto !important;
+  max-height: none !important;
+  padding-bottom: 100px !important;
+}
+
+.projects-gallery-page .projects-track,
+.projects-gallery-page .projects-viewport,
+.projects-gallery-page .rail-container,
+.projects-gallery-page .projects-rail,
+.projects-gallery-page .projects-carousel {
+  overflow: visible !important;
+  height: auto !important;
+  max-height: none !important;
+  transform: none !important;
+}
+
+/* ========== Skin visuel Hero sur le header /projects (sans 100vh) ========== */
+.projects-gallery-header-skin {
+  position: relative !important;
+  padding-top: 56px !important;
+  padding-bottom: 56px !important;
+  overflow: hidden !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+}
+
+.projects-gallery-header-skin .wf-hero-bg {
+  position: absolute !important;
+  inset: 0 !important;
+  overflow: hidden !important;
+  z-index: -1 !important;
+}
+
+.projects-gallery-header-skin .wf-inner {
+  position: relative !important;
+  z-index: 1 !important;
+}

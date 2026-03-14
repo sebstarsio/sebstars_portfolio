@@ -1,0 +1,17 @@
+import { NextResponse } from 'next/server';
+import { getCategories } from '@/lib/ecommerce-store';
+
+export const dynamic = 'force-dynamic';
+
+export async function GET() {
+  try {
+    const categories = getCategories();
+    return NextResponse.json(categories);
+  } catch (error: unknown) {
+    console.error('Error fetching categories:', error);
+    return NextResponse.json(
+      { error: 'Failed to fetch categories' },
+      { status: 500 }
+    );
+  }
+}

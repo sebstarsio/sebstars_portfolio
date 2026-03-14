@@ -1,0 +1,77 @@
+/**
+ * VARIABLES CSS
+ * 
+ * Ce fichier contient toutes les variables CSS utilisées dans le projet.
+ * Les variables permettent de changer facilement les couleurs, espacements, etc.
+ * 
+ * UTILISATION :
+ * - var(--nom-variable) dans les autres fichiers CSS
+ * - Les variables s'adaptent automatiquement au thème (dark/light)
+ */
+
+/**
+ * VARIABLES MODE SOMBRE (Par défaut)
+ * 
+ * Palette de couleurs sombre avec accents cyan et rose
+ * Inspirée du design "Cosmic Waveflow"
+ */
+:root {
+  /* Couleurs de fond */
+  --bg-dark: #050716;        /* Fond principal (noir profond) */
+  --bg-mid: #080c26;         /* Fond secondaire */
+  
+  /* Couleurs d'accent */
+  --accent: #7df3ff;         /* Cyan principal (effets lumineux) */
+  --accent-strong: #ff94e6;  /* Rose (accents forts) */
+  --accent-soft: rgba(125, 243, 255, 0.22);      /* Cyan doux (arrière-plans) */
+  --accent-soft-2: rgba(255, 148, 230, 0.2);    /* Rose doux */
+  
+  /* Couleurs de texte */
+  --text-main: #f7f8ff;      /* Texte principal (blanc cassé) */
+  --text-muted: #9ba1d5;     /* Texte secondaire (gris bleuté) */
+  
+  /* Couleurs de cartes */
+  --card-bg: rgba(10, 13, 40, 0.96);           /* Fond des cartes */
+  --border-subtle: rgba(255, 255, 255, 0.06);  /* Bordures subtiles */
+  
+  /* Rayons de bordure */
+  --radius-big: 30px;        /* Grand rayon (sections) */
+  --radius-card: 22px;        /* Rayon des cartes */
+  
+  /* Ombres */
+  --shadow-soft: 0 26px 60px rgba(0, 0, 0, 0.7);  /* Ombre douce */
+}
+
+/**
+ * VARIABLES MODE CLAIR
+ * 
+ * Palette de couleurs claire avec accents pastels
+ * Même logique que le mode sombre mais avec des couleurs claires
+ * 
+ * NOTE : La classe est appliquée sur <html> pour que les variables
+ * soient disponibles partout dans le document.
+ */
+html.theme-light,
+.theme-light {
+  /* Couleurs de fond */
+  --bg-dark: #f0f4f8;        /* Fond principal (gris clair) */
+  --bg-mid: #ffffff;         /* Fond secondaire (blanc) */
+  
+  /* Couleurs d'accent (pastels) */
+  --accent: #7dd3fc;         /* Cyan pastel */
+  --accent-strong: #f0abfc;  /* Rose pastel */
+  --accent-soft: rgba(125, 211, 252, 0.25);     /* Cyan pastel doux */
+  --accent-soft-2: rgba(240, 171, 252, 0.2);    /* Rose pastel doux */
+  
+  /* Couleurs de texte */
+  --text-main: #1a1a2e;      /* Texte principal (noir) */
+  --text-muted: #5a6c7d;     /* Texte secondaire (gris) */
+  
+  /* Couleurs de cartes */
+  --card-bg: rgba(255, 255, 255, 0.98);         /* Fond des cartes (blanc) */
+  --border-subtle: rgba(125, 211, 252, 0.3);    /* Bordures (cyan pastel) */
+  
+  /* Ombres (plus douces en mode clair) */
+  --shadow-soft: 0 26px 60px rgba(125, 211, 252, 0.2);
+}
+

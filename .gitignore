@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# archive interne (logs, audits, brouillons — ne pas pousser sur GitHub)
+_archive/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

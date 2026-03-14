@@ -1,0 +1,229 @@
+/**
+ * STYLES GLOBAUX
+ * 
+ * Ce fichier contient les styles de base appliqués à tout le site.
+ * Il définit les styles du body, les reset CSS, et les classes utilitaires.
+ */
+
+/**
+ * RESET CSS
+ * 
+ * Réinitialise les styles par défaut du navigateur pour avoir
+ * un point de départ cohérent sur tous les navigateurs.
+ */
+* {
+  box-sizing: border-box;  /* Les padding et border sont inclus dans la largeur */
+  margin: 0;               /* Supprimer les marges par défaut */
+  padding: 0;              /* Supprimer les paddings par défaut */
+}
+
+/**
+ * STYLES DU BODY
+ * 
+ * Définit les styles de base pour le corps de la page.
+ */
+body {
+  /* Police de caractères */
+  font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont,
+    "SF Pro Text", "Segoe UI", sans-serif;
+  
+  /* Fond avec gradient radial (effet cosmique) */
+  background: radial-gradient(
+    circle at top,
+    #171e4d 0%,
+    #050716 55%,
+    #03030b 100%
+  );
+  
+  /* Couleur du texte */
+  color: var(--text-main);
+  
+  /* Hauteur minimale (toute la fenêtre) */
+  min-height: 100vh;
+  
+  /* Empêcher le scroll horizontal */
+  overflow-x: hidden;
+  
+  /* Position relative pour les éléments absolus */
+  position: relative;
+  
+  /* Transition fluide pour les changements de thème */
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/**
+ * EFFET DE POINTS EN ARRIÈRE-PLAN
+ * 
+ * Crée un effet de grille de points subtil en arrière-plan
+ * pour donner une texture au fond.
+ */
+body::before {
+  content: "";  /* Nécessaire pour que l'élément soit visible */
+  position: fixed;  /* Fixe par rapport à la fenêtre */
+  inset: 0;  /* Couvre tout l'écran (top: 0, right: 0, bottom: 0, left: 0) */
+  
+  /* Deux grilles de points superposées pour un effet plus naturel */
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.16) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  
+  /* Taille des grilles */
+  background-size: 180px 180px, 260px 260px;
+  
+  /* Position des grilles (décalées pour l'effet) */
+  background-position: 0 0, 90px 150px;
+  
+  /* Opacité (assez faible pour être subtil) */
+  opacity: 0.22;
+  
+  /* Ne pas bloquer les clics */
+  pointer-events: none;
+  
+  /* Derrière tout le contenu */
+  z-index: -1;
+}
+
+/**
+ * MODE CLAIR - Body
+ * 
+ * Styles spécifiques au mode clair
+ */
+html.theme-light,
+html.theme-light body {
+  /* Fond avec gradient clair */
+  background: radial-gradient(
+    circle at top,
+    #dbeafe 0%,
+    #f0f4f8 55%,
+    #ffffff 100%
+  );
+  color: var(--text-main);
+}
+
+/**
+ * MODE CLAIR - Points en arrière-plan
+ * 
+ * Points plus subtils en mode clair
+ */
+html.theme-light body::before {
+  /* Points plus sombres en mode clair (pour être visibles) */
+  background-image:
+    radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+    radial-gradient(circle, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  opacity: 0.3;
+}
+
+/**
+ * LAYOUT PRINCIPAL
+ * 
+ * Styles pour le conteneur principal
+ */
+.wf-main {
+  /* Espacement en bas */
+  padding-bottom: 80px;
+}
+
+/**
+ * SECTIONS
+ * 
+ * Styles de base pour toutes les sections
+ */
+.wf-section {
+  width: 100%;  /* Largeur complète */
+  position: relative;  /* Pour les éléments positionnés absolument */
+  z-index: 1;  /* Au-dessus du fond */
+  padding: 40px 0 70px;  /* Espacement vertical */
+}
+
+/**
+ * CONTENEUR INTERNE
+ * 
+ * Conteneur avec largeur maximale et centrage
+ */
+.wf-inner {
+  max-width: 1300px;  /* Largeur maximale du contenu */
+  margin: 0 auto;  /* Centrer horizontalement */
+  padding: 0 22px;  /* Espacement horizontal */
+}
+
+/**
+ * HERO INNER
+ * 
+ * Espacement supplémentaire en haut pour le hero
+ */
+.hero-inner {
+  padding-top: 62px;
+}
+
+
+/**
+ * MODE CLAIR - Textes généraux
+ * 
+ * Styles pour tous les textes en mode clair
+ */
+.theme-light h1,
+.theme-light h2,
+.theme-light h3,
+.theme-light h4,
+.theme-light h5,
+.theme-light h6 {
+  color: var(--text-main);
+}
+
+.theme-light p,
+.theme-light span,
+.theme-light div {
+  color: var(--text-main);
+}
+
+.theme-light strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.theme-light .eyebrow,
+.theme-light .lead,
+.theme-light .section-lead {
+  color: var(--text-muted);
+}
+
+.theme-light .wf-logo-text {
+  color: var(--text-main);
+}
+
+/**
+ * ACCESSIBILITÉ - FOCUS VISIBLE
+ * 
+ * Styles pour améliorer l'accessibilité au clavier.
+ * Les éléments focusables doivent avoir un indicateur visible.
+ */
+
+/* Focus visible pour tous les éléments interactifs */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Focus pour les boutons */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Focus pour les inputs et textarea (déjà géré dans contact.css mais on s'assure) */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Supprimer le focus par défaut (on utilise focus-visible à la place) */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+

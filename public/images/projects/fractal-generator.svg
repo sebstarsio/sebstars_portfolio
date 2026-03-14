@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <defs>
+    <linearGradient id="fractalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a0a2e"/>
+      <stop offset="50%" stop-color="#2d1b4e"/>
+      <stop offset="100%" stop-color="#1a0a2e"/>
+    </linearGradient>
+    <linearGradient id="fractalAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7df3ff"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="240" fill="url(#fractalGrad)" rx="8"/>
+  <!-- Nested triangles evoking fractal structure -->
+  <path d="M160 40 L280 200 L40 200 Z" fill="none" stroke="url(#fractalAccent)" stroke-width="1" opacity="0.6"/>
+  <path d="M160 70 L240 200 L80 200 Z" fill="none" stroke="url(#fractalAccent)" stroke-width="1" opacity="0.5"/>
+  <path d="M160 100 L200 200 L120 200 Z" fill="none" stroke="url(#fractalAccent)" stroke-width="1" opacity="0.4"/>
+  <path d="M160 130 L180 200 L140 200 Z" fill="rgba(125,243,255,0.2)"/>
+</svg>

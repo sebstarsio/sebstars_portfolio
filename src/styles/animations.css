@@ -1,0 +1,51 @@
+/**
+ * ANIMATIONS CSS
+ * 
+ * Ce fichier contient toutes les animations CSS utilisées dans le projet.
+ * Les animations sont définies avec @keyframes et utilisées dans les composants.
+ */
+
+/**
+ * ANIMATION : Flottement des blobs
+ * 
+ * Fait flotter les blobs en arrière-plan du hero.
+ * Crée un mouvement doux et continu.
+ */
+@keyframes blobFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(40px, -40px, 0) scale(1.15);
+  }
+}
+
+/**
+ * ANIMATION : Soulignement en vague
+ * 
+ * Anime le soulignement du titre dans le hero.
+ * Crée un effet de vague qui se déplace.
+ */
+@keyframes waveUnderline {
+  0%,
+  100% {
+    transform: scaleX(0.9) translateY(0);
+  }
+  50% {
+    transform: scaleX(1.08) translateY(1px);
+  }
+}
+
+
+/**
+ * ANIMATION : Rail sinusoïdal
+ * 
+ * Anime le trait pointillé du rail sinusoïdal.
+ * Crée un effet de mouvement continu.
+ */
+@keyframes railDash {
+  to {
+    stroke-dashoffset: -160;
+  }
+}
+

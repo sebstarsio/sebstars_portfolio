@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="threeBodyGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6bcb" />
+      <stop offset="100%" stop-color="#46e6ff" />
+    </linearGradient>
+    <linearGradient id="threeBodyGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#46e6ff" />
+      <stop offset="100%" stop-color="#ffe66b" />
+    </linearGradient>
+    <linearGradient id="threeBodyGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe66b" />
+      <stop offset="100%" stop-color="#ff6bcb" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="200" height="200" fill="#050510" rx="8"/>
+  
+  <!-- Trails -->
+  <path d="M 50 100 Q 80 60 110 100 T 170 100" fill="none" stroke="url(#threeBodyGrad1)" stroke-width="2" opacity="0.6"/>
+  <path d="M 100 50 Q 130 90 100 130 T 100 170" fill="none" stroke="url(#threeBodyGrad2)" stroke-width="2" opacity="0.6"/>
+  <path d="M 150 100 Q 120 140 90 100 T 30 100" fill="none" stroke="url(#threeBodyGrad3)" stroke-width="2" opacity="0.6"/>
+  
+  <!-- Bodies -->
+  <circle cx="50" cy="100" r="8" fill="url(#threeBodyGrad1)"/>
+  <circle cx="50" cy="100" r="4" fill="#ffffff"/>
+  
+  <circle cx="100" cy="50" r="8" fill="url(#threeBodyGrad2)"/>
+  <circle cx="100" cy="50" r="4" fill="#ffffff"/>
+  
+  <circle cx="150" cy="100" r="10" fill="url(#threeBodyGrad3)"/>
+  <circle cx="150" cy="100" r="5" fill="#ffffff"/>
+  
+  <!-- Glow effects -->
+  <circle cx="50" cy="100" r="12" fill="url(#threeBodyGrad1)" opacity="0.3"/>
+  <circle cx="100" cy="50" r="12" fill="url(#threeBodyGrad2)" opacity="0.3"/>
+  <circle cx="150" cy="100" r="14" fill="url(#threeBodyGrad3)" opacity="0.3"/>
+</svg>
+

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="dashboardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" fill="url(#dashboardGrad)" rx="20"/>
+  <rect x="30" y="40" width="60" height="50" fill="white" opacity="0.9" rx="5"/>
+  <text x="60" y="65" font-family="Arial" font-size="18" fill="#8b5cf6" text-anchor="middle" font-weight="bold">1.2K</text>
+  <text x="60" y="80" font-family="Arial" font-size="8" fill="#8b5cf6" text-anchor="middle">Users</text>
+  <rect x="110" y="40" width="60" height="50" fill="white" opacity="0.9" rx="5"/>
+  <text x="140" y="65" font-family="Arial" font-size="18" fill="#8b5cf6" text-anchor="middle" font-weight="bold">45K</text>
+  <text x="140" y="80" font-family="Arial" font-size="8" fill="#8b5cf6" text-anchor="middle">Revenue</text>
+  <rect x="30" y="110" width="140" height="60" fill="white" opacity="0.9" rx="5"/>
+  <polyline points="40,150 60,140 80,145 100,130 120,135 140,125 160,120" fill="none" stroke="#8b5cf6" stroke-width="3"/>
+  <circle cx="40" cy="150" r="3" fill="#8b5cf6"/>
+  <circle cx="60" cy="140" r="3" fill="#8b5cf6"/>
+  <circle cx="80" cy="145" r="3" fill="#8b5cf6"/>
+  <circle cx="100" cy="130" r="3" fill="#8b5cf6"/>
+  <circle cx="120" cy="135" r="3" fill="#8b5cf6"/>
+  <circle cx="140" cy="125" r="3" fill="#8b5cf6"/>
+  <circle cx="160" cy="120" r="3" fill="#8b5cf6"/>
+</svg>
+

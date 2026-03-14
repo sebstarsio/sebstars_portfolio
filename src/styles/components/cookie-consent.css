@@ -1,0 +1,66 @@
+/* Bandeau RGPD informatif — non bloquant, glassmorphism SebStars */
+.cookie-consent {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  max-width: min(calc(100vw - 2rem), 520px);
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem 1rem;
+  background: rgba(8, 12, 28, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24);
+}
+
+.cookie-consent-text {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--text-muted, rgba(200, 210, 240, 0.9));
+  flex: 1 1 280px;
+}
+
+.cookie-consent-btn {
+  flex-shrink: 0;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--bg-deep, #050716);
+  background: var(--accent, rgba(100, 180, 255, 0.9));
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.cookie-consent-btn:hover {
+  opacity: 0.95;
+}
+
+.cookie-consent-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.theme-light .cookie-consent {
+  background: rgba(240, 244, 252, 0.85);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+.theme-light .cookie-consent-text {
+  color: rgba(30, 40, 70, 0.9);
+}
+
+.theme-light .cookie-consent-btn {
+  color: #fff;
+  background: var(--accent, #3b82f6);
+}

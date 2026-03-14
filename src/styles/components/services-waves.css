@@ -1,0 +1,91 @@
+/**
+ * STYLES VAGUES POINTILLÉES — SECTION SERVICES
+ *
+ * Duplication de l’animation des lignes ondulées pointillées de la section Projects,
+ * en version miroir (droite → gauche) pour Services.
+ * Méthode : keyframes inversées (railDashMirror), overlay décoratif sans scaleX sur le contenu.
+ */
+
+/**
+ * Keyframes miroir : sens inverse de railDash (stroke-dashoffset de -160 à 0).
+ * Équivalent visuel droite → gauche sans transform sur le conteneur.
+ */
+@keyframes railDashMirror {
+  from {
+    stroke-dashoffset: -160;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/**
+ * 1. Section : reset contexte d'empilement + socle
+ */
+section.services-dotted-wave-lines {
+  all: unset;
+  display: block !important;
+  position: relative !important;
+  isolation: isolate !important;
+  background: transparent !important;
+  overflow: hidden !important;
+  width: 100%;
+}
+
+/**
+ * 2. Overlay (le fond) — spécificité max, niveau abyssal
+ */
+#services.services-dotted-wave-lines .services-wave-rail-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  opacity: 0.5 !important;
+  overflow: hidden;
+}
+
+section.services-dotted-wave-lines .services-wave-rail-overlay svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100% !important;
+  height: 200px !important; /* Hauteur fixe pour correspondre au viewBox 0 0 1440 200 */
+  display: block !important;
+}
+
+/* Même ADN que Projects : stroke, stroke-width, stroke-dasharray, stroke-linecap + keyframes miroir */
+section.services-dotted-wave-lines .services-wave-rail-overlay svg path {
+  fill: none !important;
+  stroke: rgba(125, 243, 255, 0.9) !important;
+  stroke-width: 2 !important;
+  stroke-linecap: round !important;
+  stroke-dasharray: 6 10 !important;
+  animation: railDashMirror 10s linear infinite !important;
+}
+
+/**
+ * Contenu (couche 2 — au-dessus) : au-dessus de l’animation.
+ */
+#services.services-dotted-wave-lines > .wf-wave-divider {
+  position: relative !important;
+  z-index: 9999 !important;
+}
+
+#services.services-dotted-wave-lines .wf-inner {
+  position: relative !important;
+  z-index: 9999 !important;
+  background: transparent !important;
+}
+
+/* Mode clair — aligné sur Projects */
+.theme-light section.services-dotted-wave-lines .services-wave-rail-overlay svg path {
+  stroke: var(--accent) !important;
+  stroke-width: 2.5px !important;
+}
+
+/* Diagnostic : si les lignes n’apparaissent pas, décommenter pour tester la visibilité du path :
+section.services-dotted-wave-lines .services-wave-rail-overlay svg path {
+  stroke: red !important;
+}
+*/

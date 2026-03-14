@@ -1,0 +1,340 @@
+/**
+ * HEADER — Navbar flottante glassmorphism premium
+ * Zone de fond (wf-header-zone) : plus claire + micro-vague, reste en haut au scroll.
+ * Navbar (wf-header) : sticky, recouvre la zone au chargement puis flotte au scroll.
+ */
+
+/* ========== ZONE DE FOND HAUT DE PAGE (fond legacy: dégradé header ancien portfolio) ========== */
+.wf-header-zone {
+  height: 88px;
+  position: relative;
+  overflow: hidden;
+  pointer-events: none;
+
+  /* Fond du header legacy : dégradé sombre → transparent (sebstarsionextjs header.css) */
+  background: linear-gradient(
+    to bottom,
+    rgba(3, 4, 20, 0.96),
+    rgba(3, 4, 20, 0.85),
+    transparent
+  );
+}
+
+/* Micro-vague très discrète en bas de la zone */
+.wf-header-zone::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 14'%3E%3Cpath fill='%23070a1e' fill-opacity='0.4' d='M0,14 L0,10 Q400,4 600,10 T1200,10 L1200,14 Z'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+.theme-light .wf-header-zone {
+  /* Fond header legacy theme-light */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.96),
+    rgba(255, 255, 255, 0.85),
+    transparent
+  );
+}
+
+.theme-light .wf-header-zone::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 14'%3E%3Cpath fill='%23ffffff' fill-opacity='0.5' d='M0,14 L0,10 Q400,4 600,10 T1200,10 L1200,14 Z'/%3E%3C/svg%3E");
+}
+
+/* ========== HEADER (navbar sticky, fond legacy pour cohérence au scroll) ========== */
+.wf-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  margin-top: -88px; /* Superposition sur la zone */
+  padding: 12px 20px 14px;
+  /* Même fond que la zone (legacy) pour continuité au scroll */
+  background: linear-gradient(
+    to bottom,
+    rgba(3, 4, 20, 0.96),
+    rgba(3, 4, 20, 0.85),
+    transparent
+  );
+}
+
+.wf-header-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 24px 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  /* Navbar flottante glass — ombre douce pour effet de flottement cinématique */
+  background: rgba(8, 12, 28, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(125, 243, 255, 0.15);
+  border-radius: 999px;
+  box-shadow:
+    0 6px 28px rgba(0, 0, 0, 0.32),
+    0 2px 10px rgba(0, 0, 0, 0.18),
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+}
+
+/* ========== LOGO ========== */
+.wf-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: transparent !important;
+  text-decoration: none;
+}
+
+.wf-logo-mark {
+  width: 44px;
+  height: 44px;
+  display: inline-block;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+  background: transparent !important;
+}
+
+.wf-logo-mark:hover {
+  transform: scale(1.08) rotate(4deg);
+}
+
+.wf-logo-mark img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  background: transparent !important;
+}
+
+.wf-logo-text {
+  font-family: var(--font-orbitron);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 1.35rem;
+  color: var(--text-main);
+}
+
+/* ========== NAV LINKS ========== */
+.wf-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.wf-nav-link {
+  position: relative;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-space-grotesk);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.22s ease, border-color 0.22s ease, transform 0.22s ease, background 0.22s ease;
+}
+
+.wf-nav-link:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.wf-nav-link:focus-visible {
+  outline: none;
+  border-color: rgba(125, 243, 255, 0.5);
+  box-shadow: 0 0 0 2px rgba(125, 243, 255, 0.2);
+}
+
+/* Indicateur actif */
+.wf-nav-link.active {
+  color: var(--accent);
+}
+
+.wf-nav-link.active::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  width: 20px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+  transform: translateX(-50%);
+  animation: wf-nav-active-in 0.3s ease forwards;
+}
+
+@keyframes wf-nav-active-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scaleX(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1);
+  }
+}
+
+.wf-nav-link.active:hover::after {
+  opacity: 0.9;
+  box-shadow: 0 0 8px rgba(125, 243, 255, 0.5);
+}
+
+/* ========== CTA CONTACT ========== */
+.wf-nav-cta {
+  margin-left: 0.5rem;
+  padding: 0.65rem 1.35rem !important;
+  background: rgba(125, 243, 255, 0.12) !important;
+  border: 1px solid rgba(125, 243, 255, 0.35) !important;
+  color: var(--accent) !important;
+  font-weight: 600;
+}
+
+.wf-nav-cta::after {
+  display: none !important;
+}
+
+.wf-nav-cta:hover {
+  background: rgba(125, 243, 255, 0.22) !important;
+  border-color: rgba(125, 243, 255, 0.5) !important;
+  color: var(--text-main) !important;
+  box-shadow: 0 0 20px rgba(125, 243, 255, 0.2);
+}
+
+.wf-nav-cta:focus-visible {
+  border-color: rgba(125, 243, 255, 0.6) !important;
+  box-shadow: 0 0 0 2px rgba(125, 243, 255, 0.3);
+}
+
+/* ========== THEME LIGHT ========== */
+.theme-light .wf-header {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.96),
+    rgba(255, 255, 255, 0.85),
+    transparent
+  );
+}
+
+.theme-light .wf-header-inner {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(125, 211, 252, 0.35);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04) inset;
+}
+
+.theme-light .wf-logo-text {
+  color: var(--text-main);
+}
+
+.theme-light .wf-nav-link {
+  color: var(--text-muted);
+}
+
+.theme-light .wf-nav-link:hover {
+  color: var(--accent);
+}
+
+.theme-light .wf-nav-link.active {
+  color: var(--accent);
+}
+
+.theme-light .wf-nav-link.active::after {
+  background: var(--accent);
+}
+
+.theme-light .wf-nav-cta {
+  background: rgba(125, 211, 252, 0.2) !important;
+  border-color: rgba(125, 211, 252, 0.5) !important;
+  color: var(--accent) !important;
+}
+
+.theme-light .wf-nav-cta:hover {
+  background: rgba(125, 211, 252, 0.35) !important;
+  border-color: rgba(125, 211, 252, 0.6) !important;
+  color: var(--text-main) !important;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 900px) {
+  .wf-nav {
+    gap: 0.25rem;
+  }
+
+  .wf-nav-link {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  .wf-nav-cta {
+    padding: 0.55rem 1.1rem !important;
+  }
+}
+
+@media (max-width: 780px) {
+  .wf-header-zone {
+    height: 72px;
+  }
+
+  .wf-header-zone::after {
+    height: 10px;
+  }
+
+  .wf-header {
+    margin-top: -72px;
+    padding: 10px 14px;
+  }
+
+  .wf-header-inner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 14px 18px;
+    border-radius: 16px;
+    gap: 12px;
+  }
+
+  .wf-nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.4rem;
+  }
+
+  .wf-nav-link {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.82rem;
+  }
+
+  .wf-nav-link.active::after {
+    bottom: 3px;
+    width: 16px;
+  }
+
+  .wf-nav-cta {
+    margin-left: 0;
+    margin-top: 0.25rem;
+    width: 100%;
+    text-align: center;
+    padding: 0.6rem 1rem !important;
+  }
+
+  .wf-logo-mark {
+    width: 40px;
+    height: 40px;
+  }
+
+  .wf-logo-text {
+    font-size: 1.2rem;
+  }
+}
