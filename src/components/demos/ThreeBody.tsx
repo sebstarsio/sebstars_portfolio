@@ -428,6 +428,11 @@ export default function ThreeBody({ architectureNotes, lang = 'fr' }: ThreeBodyP
     setTrajectoryHistory([]);
   }, [bodyCount, palette, vFactor, getMasses, createBody]);
 
+  useEffect(() => {
+    initDefault();
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- rendu initial à t=0, une seule fois au montage
+  }, []);
+
   // Canvas 2D fallback
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [width, setWidth] = useState(1000);

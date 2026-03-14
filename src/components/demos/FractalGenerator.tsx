@@ -29,7 +29,7 @@ export default function FractalGenerator({ architectureNotes, lang = 'fr' }: Fra
     type: 'mandelbrot',
     iterations: 50,
     colorScheme: 'rainbow',
-    zoom: 50,
+    zoom: 0,
     centerX: 0,
     centerY: 0,
     juliaCx: -0.7,

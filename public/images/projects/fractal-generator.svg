@@ -1,19 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+<svg width="320" height="240" viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="fractalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1a0a2e"/>
-      <stop offset="50%" stop-color="#2d1b4e"/>
-      <stop offset="100%" stop-color="#1a0a2e"/>
+    <linearGradient id="fracBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0d28;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#10163b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#080c1c;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="fractalAccent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7df3ff"/>
+    <linearGradient id="fracAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7dd3fc"/>
       <stop offset="100%" stop-color="#8b5cf6"/>
     </linearGradient>
   </defs>
-  <rect width="320" height="240" fill="url(#fractalGrad)" rx="8"/>
-  <!-- Nested triangles evoking fractal structure -->
-  <path d="M160 40 L280 200 L40 200 Z" fill="none" stroke="url(#fractalAccent)" stroke-width="1" opacity="0.6"/>
-  <path d="M160 70 L240 200 L80 200 Z" fill="none" stroke="url(#fractalAccent)" stroke-width="1" opacity="0.5"/>
-  <path d="M160 100 L200 200 L120 200 Z" fill="none" stroke="url(#fractalAccent)" stroke-width="1" opacity="0.4"/>
-  <path d="M160 130 L180 200 L140 200 Z" fill="rgba(125,243,255,0.2)"/>
+  <rect width="320" height="240" fill="url(#fracBg)"/>
+  <path d="M160 44 L276 196 L44 196 Z" fill="none" stroke="url(#fracAccent)" stroke-width="0.8" opacity="0.5"/>
+  <path d="M160 68 L244 196 L76 196 Z" fill="none" stroke="url(#fracAccent)" stroke-width="0.7" opacity="0.4"/>
+  <path d="M160 92 L212 196 L108 196 Z" fill="none" stroke="url(#fracAccent)" stroke-width="0.6" opacity="0.3"/>
+  <path d="M160 116 L180 196 L140 196 Z" fill="rgba(125,243,255,0.12)"/>
+  <circle cx="48" cy="36" r="0.8" fill="#fff" opacity="0.5"/>
+  <circle cx="272" cy="44" r="0.8" fill="#fff" opacity="0.5"/>
+  <circle cx="28" cy="198" r="0.8" fill="#fff" opacity="0.5"/>
+  <circle cx="292" cy="186" r="0.8" fill="#fff" opacity="0.5"/>
 </svg>

@@ -1,24 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<svg width="320" height="240" viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="dashboardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#8b5cf6" />
-      <stop offset="100%" stop-color="#ec4899" />
+    <linearGradient id="dashBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0d28;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#10163b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#080c1c;stop-opacity:1" />
     </linearGradient>
   </defs>
-  <rect width="200" height="200" fill="url(#dashboardGrad)" rx="20"/>
-  <rect x="30" y="40" width="60" height="50" fill="white" opacity="0.9" rx="5"/>
-  <text x="60" y="65" font-family="Arial" font-size="18" fill="#8b5cf6" text-anchor="middle" font-weight="bold">1.2K</text>
-  <text x="60" y="80" font-family="Arial" font-size="8" fill="#8b5cf6" text-anchor="middle">Users</text>
-  <rect x="110" y="40" width="60" height="50" fill="white" opacity="0.9" rx="5"/>
-  <text x="140" y="65" font-family="Arial" font-size="18" fill="#8b5cf6" text-anchor="middle" font-weight="bold">45K</text>
-  <text x="140" y="80" font-family="Arial" font-size="8" fill="#8b5cf6" text-anchor="middle">Revenue</text>
-  <rect x="30" y="110" width="140" height="60" fill="white" opacity="0.9" rx="5"/>
-  <polyline points="40,150 60,140 80,145 100,130 120,135 140,125 160,120" fill="none" stroke="#8b5cf6" stroke-width="3"/>
-  <circle cx="40" cy="150" r="3" fill="#8b5cf6"/>
-  <circle cx="60" cy="140" r="3" fill="#8b5cf6"/>
-  <circle cx="80" cy="145" r="3" fill="#8b5cf6"/>
-  <circle cx="100" cy="130" r="3" fill="#8b5cf6"/>
-  <circle cx="120" cy="135" r="3" fill="#8b5cf6"/>
-  <circle cx="140" cy="125" r="3" fill="#8b5cf6"/>
-  <circle cx="160" cy="120" r="3" fill="#8b5cf6"/>
+  <rect width="320" height="240" fill="url(#dashBg)"/>
+  <rect x="60" y="20" width="200" height="200" rx="8" fill="#080c1c" stroke="rgba(255,255,255,0.14)" stroke-width="0.8"/>
+  <rect x="76" y="36" width="68" height="52" rx="6" fill="rgba(22,32,52,0.9)" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
+  <text x="110" y="62" font-family="system-ui,sans-serif" font-size="16" fill="#7dd3fc" text-anchor="middle" font-weight="700">1.2K</text>
+  <text x="110" y="78" font-family="system-ui,sans-serif" font-size="9" fill="rgba(125,243,255,0.6)" text-anchor="middle">Users</text>
+  <rect x="156" y="36" width="68" height="52" rx="6" fill="rgba(22,32,52,0.9)" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
+  <text x="190" y="62" font-family="system-ui,sans-serif" font-size="16" fill="#8b5cf6" text-anchor="middle" font-weight="700">45K</text>
+  <text x="190" y="78" font-family="system-ui,sans-serif" font-size="9" fill="rgba(139,92,246,0.7)" text-anchor="middle">Revenue</text>
+  <rect x="76" y="98" width="148" height="68" rx="6" fill="rgba(22,32,52,0.6)" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+  <polyline points="84,156 102,146 120,150 138,136 156,140 174,130 192,126" fill="none" stroke="#7dd3fc" stroke-width="1.8" opacity="0.9"/>
+  <circle cx="84" cy="156" r="2.2" fill="#7dd3fc"/>
+  <circle cx="102" cy="146" r="2.2" fill="#7dd3fc"/>
+  <circle cx="120" cy="150" r="2.2" fill="#7dd3fc"/>
+  <circle cx="138" cy="136" r="2.2" fill="#7dd3fc"/>
+  <circle cx="156" cy="140" r="2.2" fill="#7dd3fc"/>
+  <circle cx="174" cy="130" r="2.2" fill="#7dd3fc"/>
+  <circle cx="192" cy="126" r="2.2" fill="#7dd3fc"/>
+  <circle cx="48" cy="36" r="0.8" fill="#fff" opacity="0.5"/>
+  <circle cx="272" cy="44" r="0.8" fill="#fff" opacity="0.5"/>
+  <circle cx="28" cy="198" r="0.8" fill="#fff" opacity="0.5"/>
+  <circle cx="292" cy="186" r="0.8" fill="#fff" opacity="0.5"/>
 </svg>

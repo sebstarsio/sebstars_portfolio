@@ -88,7 +88,7 @@ export default function Calculator({ architectureNotes, lang = 'fr' }: Calculato
   const [memory, setMemory] = useState(0);
   const [history, setHistory] = useState<HistoryEntry[]>([]);
   const [showHistory, setShowHistory] = useState(false);
-  const [currentExpression, setCurrentExpression] = useState('');
+  const [currentExpression, setCurrentExpression] = useState('E = mc²');
   const [lastAnswer, setLastAnswer] = useState<number | null>(null);
 
   const calculate = (first: number, second: number, op: string): number => {

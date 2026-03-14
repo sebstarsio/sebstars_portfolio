@@ -1,54 +1,35 @@
-<svg width="320" height="192" viewBox="0 0 320 192" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Définition du dégradé -->
+<svg width="320" height="240" viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="constGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    <linearGradient id="constBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0d28;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#10163b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#080c1c;stop-opacity:1" />
     </linearGradient>
   </defs>
-  
-  <!-- Fond avec dégradé -->
-  <rect width="320" height="192" rx="8" fill="url(#constGrad)"/>
-  
-  <!-- Étoiles de fond -->
-  <circle cx="50" cy="40" r="1.5" fill="#ffffff" opacity="0.8"/>
-  <circle cx="120" cy="60" r="1" fill="#ffffff" opacity="0.6"/>
-  <circle cx="200" cy="30" r="1.5" fill="#ffffff" opacity="0.7"/>
-  <circle cx="280" cy="50" r="1" fill="#ffffff" opacity="0.6"/>
-  <circle cx="80" cy="120" r="1" fill="#ffffff" opacity="0.5"/>
-  <circle cx="250" cy="140" r="1.5" fill="#ffffff" opacity="0.7"/>
-  
-  <!-- Constellation Orion (simplifiée) -->
-  <!-- Lignes de connexion -->
-  <line x1="100" y1="60" x2="120" y2="50" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>
-  <line x1="120" y1="50" x2="140" y2="55" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>
-  <line x1="140" y1="55" x2="160" y2="50" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>
-  <line x1="160" y1="50" x2="180" y2="70" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>
-  <line x1="100" y1="60" x2="180" y2="70" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>
-  
-  <!-- Étoiles principales -->
-  <circle cx="100" cy="60" r="4" fill="#ff6b47" opacity="0.9"/>
-  <circle cx="100" cy="60" r="2" fill="#ffffff"/>
-  
-  <circle cx="120" cy="50" r="3" fill="#ffffff" opacity="0.9"/>
-  <circle cx="140" cy="55" r="3" fill="#b3d9ff" opacity="0.9"/>
-  <circle cx="160" cy="50" r="3" fill="#ffffff" opacity="0.9"/>
-  <circle cx="180" cy="70" r="4" fill="#b3d9ff" opacity="0.9"/>
-  <circle cx="180" cy="70" r="2" fill="#ffffff"/>
-  
-  <!-- Constellation Grande Ourse (simplifiée) -->
-  <line x1="60" y1="120" x2="80" y2="110" stroke="#ffffff" stroke-width="1" opacity="0.5"/>
-  <line x1="80" y1="110" x2="100" y2="115" stroke="#ffffff" stroke-width="1" opacity="0.5"/>
-  <line x1="100" y1="115" x2="120" y2="110" stroke="#ffffff" stroke-width="1" opacity="0.5"/>
-  <line x1="120" y1="110" x2="140" y2="120" stroke="#ffffff" stroke-width="1" opacity="0.5"/>
-  
-  <circle cx="60" cy="120" r="2.5" fill="#ffeb99" opacity="0.8"/>
-  <circle cx="80" cy="110" r="2" fill="#ffffff" opacity="0.7"/>
-  <circle cx="100" cy="115" r="2" fill="#ffffff" opacity="0.7"/>
-  <circle cx="120" cy="110" r="2" fill="#ffffff" opacity="0.7"/>
-  <circle cx="140" cy="120" r="2.5" fill="#ffffff" opacity="0.8"/>
-  
-  <!-- Icône constellation -->
-  <text x="250" y="160" font-family="Arial" font-size="32" fill="#ffffff" opacity="0.7">⭐</text>
+  <rect width="320" height="240" fill="url(#constBg)"/>
+  <line x1="88" y1="72" x2="108" y2="64" stroke="rgba(140,220,255,0.38)" stroke-width="0.8"/>
+  <line x1="108" y1="64" x2="132" y2="68" stroke="rgba(140,220,255,0.38)" stroke-width="0.8"/>
+  <line x1="132" y1="68" x2="152" y2="64" stroke="rgba(140,220,255,0.38)" stroke-width="0.8"/>
+  <line x1="152" y1="64" x2="172" y2="82" stroke="rgba(140,220,255,0.38)" stroke-width="0.8"/>
+  <line x1="88" y1="72" x2="172" y2="82" stroke="rgba(140,220,255,0.38)" stroke-width="0.8"/>
+  <circle cx="88" cy="72" r="2.5" fill="#e8ecf4" opacity="0.95"/>
+  <circle cx="108" cy="64" r="2.2" fill="#e8ecf4" opacity="0.9"/>
+  <circle cx="132" cy="68" r="2.2" fill="#e8ecf4" opacity="0.9"/>
+  <circle cx="152" cy="64" r="2.2" fill="#e8ecf4" opacity="0.9"/>
+  <circle cx="172" cy="82" r="2.5" fill="#e8ecf4" opacity="0.95"/>
+  <line x1="56" y1="140" x2="76" y2="132" stroke="rgba(140,220,255,0.35)" stroke-width="0.8"/>
+  <line x1="76" y1="132" x2="96" y2="136" stroke="rgba(140,220,255,0.35)" stroke-width="0.8"/>
+  <line x1="96" y1="136" x2="116" y2="132" stroke="rgba(140,220,255,0.35)" stroke-width="0.8"/>
+  <line x1="116" y1="132" x2="136" y2="140" stroke="rgba(140,220,255,0.35)" stroke-width="0.8"/>
+  <circle cx="56" cy="140" r="1.8" fill="#e8ecf4" opacity="0.8"/>
+  <circle cx="76" cy="132" r="1.6" fill="#e8ecf4" opacity="0.75"/>
+  <circle cx="96" cy="136" r="1.6" fill="#e8ecf4" opacity="0.75"/>
+  <circle cx="116" cy="132" r="1.6" fill="#e8ecf4" opacity="0.75"/>
+  <circle cx="136" cy="140" r="1.8" fill="#e8ecf4" opacity="0.8"/>
+  <circle cx="48" cy="36" r="0.8" fill="#fff" opacity="0.5"/>
+  <circle cx="272" cy="44" r="0.8" fill="#fff" opacity="0.5"/>
+  <circle cx="28" cy="198" r="0.8" fill="#fff" opacity="0.5"/>
+  <circle cx="292" cy="186" r="0.8" fill="#fff" opacity="0.5"/>
+  <circle cx="96" cy="26" r="0.8" fill="#fff" opacity="0.5"/>
+  <circle cx="254" cy="26" r="0.8" fill="#fff" opacity="0.5"/>
 </svg>
