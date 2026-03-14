@@ -48,3 +48,7 @@ _archive/
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# assets bruts (source pipeline — ne pas versionner les captures)
+/public/images/projects/raw/*
+!/public/images/projects/raw/.gitkeep

@@ -9,7 +9,8 @@
     "lint": "eslint",
     "log:step2": "node tools/rebuild/generate_step_log_02.mjs",
     "screenshots": "tsx scripts/generateProjectScreenshots.ts",
-    "studio-screenshots": "tsx scripts/generateStudioScreenshots.ts"
+    "studio-screenshots": "tsx scripts/generateStudioScreenshots.ts",
+    "assets:build": "node scripts/post-process-assets.js"
   },
   "dependencies": {
     "@tiptap/extension-link": "^2.27.2",
