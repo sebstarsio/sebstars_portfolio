@@ -17,6 +17,7 @@ export const projects: Project[] = [
     image: '/images/projects/solar-system.svg',
     demo: '/demo/solar-system',
     github: 'https://github.com/sebstars/systeme-solaire',
+    githubUrl: 'https://github.com/sebstarsio/sebstars_portfolio/blob/main/src/components/demos/SolarSystem.tsx',
     features: [
       'Animations CSS 3D fluides avec orbites réalistes',
       'Données astronomiques réelles (NASA/IAU)',
@@ -57,6 +58,7 @@ export const projects: Project[] = [
     image: '/images/projects/constellations.svg',
     demo: '/demo/constellations',
     github: 'https://github.com/sebstars/constellations',
+    githubUrl: 'https://github.com/sebstarsio/sebstars_portfolio/blob/main/src/components/demos/Constellations.tsx',
     features: [
       'Ciel étoilé interactif avec effets de lumière réalistes et halos',
       'Recherche de constellations et étoiles avec informations détaillées',
@@ -97,6 +99,7 @@ export const projects: Project[] = [
     image: '/images/projects/ecommerce.svg',
     demo: '/demo/ecommerce',
     github: 'https://github.com/sebstars/ecommerce',
+    githubUrl: 'https://github.com/sebstarsio/sebstars_portfolio/blob/main/src/components/demos/Ecommerce.tsx',
     features: [
       'Base de données PostgreSQL avec Prisma ORM',
       'API REST complète avec Next.js API Routes',
@@ -137,6 +140,7 @@ export const projects: Project[] = [
     image: '/images/projects/three-body.svg',
     demo: '/demo/three-body',
     github: 'https://github.com/sebstars/three-body',
+    githubUrl: 'https://github.com/sebstarsio/sebstars_portfolio/blob/main/src/components/demos/ThreeBody.tsx',
     features: [
       'Rendu WebGL/Three.js avec accélération GPU',
       'Mode multi-corps (3 à 5 corps configurables)',
@@ -157,6 +161,7 @@ export const projects: Project[] = [
     image: '/images/projects/astro-data-viewer.svg',
     demo: '/demo/astro-data-viewer',
     github: 'https://github.com/sebstars/astro-data-viewer',
+    githubUrl: 'https://github.com/sebstarsio/sebstars_portfolio/blob/main/src/components/demos/AstroDataViewer.tsx',
     features: [
       'Images astronomiques NASA/JWST avec recherche avancée',
       'Catalogue d\'exoplanètes avec visualisation 3D (Three.js)',
@@ -176,6 +181,7 @@ export const projects: Project[] = [
     image: '/images/projects/fractal-generator.svg',
     demo: '/demo/fractal-generator',
     github: 'https://github.com/sebstars/fractal-generator',
+    githubUrl: 'https://github.com/sebstarsio/sebstars_portfolio/blob/main/src/components/demos/FractalGenerator.tsx',
     features: [
       '6 types de fractales (Mandelbrot, Julia, Burning Ship, Newton, Sierpinski, Koch)',
       'Rendu progressif avec barre de progression et double buffering',

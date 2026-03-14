@@ -44,7 +44,7 @@ interface DemoPageProps {
 }
 
 // Composant de démo par défaut (pour les projets non encore intégrés)
-function DefaultDemo({ project }: { project: { title: string; subtitle?: string; github?: string } }) {
+function DefaultDemo({ project }: { project: { title: string; subtitle?: string; github?: string; githubUrl?: string } }) {
   return (
     <section className="wf-section" style={{ paddingTop: '100px', minHeight: '100vh' }}>
       <div className="wf-inner">
@@ -68,9 +68,9 @@ function DefaultDemo({ project }: { project: { title: string; subtitle?: string;
           <p style={{ marginBottom: '1rem', color: 'var(--text-muted)' }}>
             La démo de ce projet sera intégrée prochainement.
           </p>
-          {project.github && (
+          {(project.githubUrl || project.github) && (
             <a
-              href={project.github}
+              href={project.githubUrl || project.github}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"

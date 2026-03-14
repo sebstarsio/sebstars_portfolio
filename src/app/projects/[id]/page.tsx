@@ -170,7 +170,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                 </a>
               )}
               <a
-                href={project.github || 'https://github.com/sebstars/sebstars_portfolio'}
+                href={project.githubUrl || project.github || 'https://github.com/sebstarsio/sebstars_portfolio'}
                 className="project-link project-link-github"
                 target="_blank"
                 rel="noopener noreferrer"
