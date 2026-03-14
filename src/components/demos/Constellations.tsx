@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback, useMemo } from 'react';
 import { CONSTELLATIONS, Constellation, Star, equatorialToCanvas, getMythology } from '@/lib/demos/constellations-data';
+import ViewSourceButton from '@/components/ui/ViewSourceButton';
 import '../../styles/demos/constellations.css';
 
 export default function Constellations() {
@@ -615,7 +616,8 @@ export default function Constellations() {
   };
 
   return (
-    <>
+    <div style={{ position: 'relative' }}>
+      <ViewSourceButton filename="Constellations.tsx" />
       <section className="wf-section wf-hero">
         <div className="wf-hero-bg">
           <div className="wf-starfield-layer"></div>
@@ -898,7 +900,7 @@ export default function Constellations() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 

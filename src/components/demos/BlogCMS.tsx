@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import RichTextEditor from './RichTextEditor';
+import ViewSourceButton from '@/components/ui/ViewSourceButton';
 import '../../styles/demos/blog-cms.css';
 
 interface Article {
@@ -161,7 +162,8 @@ export default function BlogCMS() {
     .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 
   return (
-    <>
+    <div style={{ position: 'relative' }}>
+      <ViewSourceButton filename="BlogCMS.tsx" />
       <section className="wf-section wf-hero blog-cms-hero">
         <div className="wf-hero-bg">
           <div className="wf-starfield-layer"></div>
@@ -433,7 +435,7 @@ export default function BlogCMS() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 

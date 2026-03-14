@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { logger } from '@/lib/logger';
+import ViewSourceButton from '@/components/ui/ViewSourceButton';
 import '../../styles/demos/astro-data-viewer.css';
 
 interface AstroItem {
@@ -362,7 +363,8 @@ export default function AstroDataViewer() {
   }
 
   return (
-    <div className="astro-viewer-container" style={{ display: 'flex', width: '100%', minHeight: '100vh' }}>
+    <div className="astro-viewer-container" style={{ display: 'flex', width: '100%', minHeight: '100vh', position: 'relative' }}>
+      <ViewSourceButton filename="AstroDataViewer.tsx" />
       {/* SIDEBAR */}
       <aside className="astro-sidebar">
         <div>

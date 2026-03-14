@@ -17,6 +17,7 @@
 @import './components/error-boundary.css';
 @import './components/waves.css';
 @import './components/cookie-consent.css';
+@import './components/view-source-button.css';
 @import './demos/solar-system.css';
 @import './demos/calculator.css';
 @import './demos/constellations.css';

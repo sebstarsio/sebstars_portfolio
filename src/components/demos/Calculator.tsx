@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import ViewSourceButton from '@/components/ui/ViewSourceButton';
 import '../../styles/demos/calculator.css';
 
 type CalculatorMode = 'normal' | 'scientific';
@@ -304,7 +305,8 @@ export default function Calculator() {
     : normalButtons;
 
   return (
-    <>
+    <div style={{ position: 'relative' }}>
+      <ViewSourceButton filename="Calculator.tsx" />
       <section className="wf-section wf-hero">
         <div className="wf-hero-bg">
           <div className="wf-starfield-layer"></div>
@@ -450,6 +452,6 @@ export default function Calculator() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

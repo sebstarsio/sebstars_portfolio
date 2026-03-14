@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { PLANETS_DATA, PlanetData, formatDistance, formatPeriod } from '@/lib/demos/solar-system-data';
+import ViewSourceButton from '@/components/ui/ViewSourceButton';
 import '../../styles/demos/solar-system.css';
 
 // Interface simple pour l'animation CSS (gardée pour compatibilité)
@@ -221,7 +222,8 @@ export default function SolarSystem() {
   };
 
   return (
-    <>
+    <div style={{ position: 'relative' }}>
+      <ViewSourceButton filename="SolarSystem.tsx" />
       <section className="wf-section wf-hero">
         <div className="wf-hero-bg">
           <div className="wf-starfield-layer"></div>
@@ -573,6 +575,6 @@ export default function SolarSystem() {
           )}
         </div>
       </section>
-    </>
+    </div>
   );
 }

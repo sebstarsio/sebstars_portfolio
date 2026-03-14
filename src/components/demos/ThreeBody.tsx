@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import * as THREE from 'three';
+import ViewSourceButton from '@/components/ui/ViewSourceButton';
 import '../../styles/demos/three-body.css';
 
 interface Body {
@@ -689,7 +690,8 @@ export default function ThreeBody() {
   };
 
   return (
-    <>
+    <div style={{ position: 'relative' }}>
+      <ViewSourceButton filename="ThreeBody.tsx" />
       <section className="wf-section wf-hero">
         <div className="wf-hero-bg">
           <div className="wf-starfield-layer"></div>
@@ -912,6 +914,6 @@ export default function ThreeBody() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

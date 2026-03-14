@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import ViewSourceButton from '@/components/ui/ViewSourceButton';
 import '../../styles/demos/dashboard.css';
 
 interface DataPoint {
@@ -452,7 +453,8 @@ export default function Dashboard() {
   };
 
   return (
-    <>
+    <div style={{ position: 'relative' }}>
+      <ViewSourceButton filename="Dashboard.tsx" />
       <section className="wf-section wf-hero">
         <div className="wf-hero-bg">
           <div className="wf-starfield-layer"></div>
@@ -575,6 +577,6 @@ export default function Dashboard() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

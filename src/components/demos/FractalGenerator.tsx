@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import ViewSourceButton from '@/components/ui/ViewSourceButton';
 import '../../styles/demos/fractal-generator.css';
 
 type FractalType = 'mandelbrot' | 'julia' | 'sierpinski' | 'koch' | 'burning-ship' | 'newton';
@@ -492,7 +493,8 @@ export default function FractalGenerator() {
   };
 
   return (
-    <>
+    <div style={{ position: 'relative' }}>
+      <ViewSourceButton filename="FractalGenerator.tsx" />
       <section className="wf-section wf-hero">
         <div className="wf-hero-bg">
           <div className="wf-starfield-layer"></div>
@@ -827,7 +829,7 @@ export default function FractalGenerator() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useSession, signIn, signOut } from 'next-auth/react';
+import ViewSourceButton from '@/components/ui/ViewSourceButton';
 import '../../styles/demos/ecommerce.css';
 
 interface Product {
@@ -322,7 +323,8 @@ export default function Ecommerce() {
   const allCategories = [{ id: 'tous', name: 'Tous', slug: 'tous' }, ...categories];
 
   return (
-    <>
+    <div style={{ position: 'relative' }}>
+      <ViewSourceButton filename="Ecommerce.tsx" />
       <section className="wf-section wf-hero">
         <div className="wf-hero-bg">
           <div className="wf-starfield-layer"></div>
@@ -608,6 +610,6 @@ export default function Ecommerce() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
