@@ -38,6 +38,7 @@ export const projects: Project[] = [
     image: '/images/projects/calculatrice.svg',
     demo: '/demo/calculatrice',
     github: 'https://github.com/sebstars/calculatrice',
+    githubUrl: 'https://github.com/sebstarsio/sebstars_portfolio/blob/main/src/components/demos/Calculator.tsx',
     features: [
       'Mode normal et scientifique avec basculement',
       'Historique des calculs (50 dernières opérations) avec réutilisation',
@@ -79,6 +80,7 @@ export const projects: Project[] = [
     image: '/images/projects/blog-cms.svg',
     demo: '/demo/blog-cms',
     github: 'https://github.com/sebstars/blog-cms',
+    githubUrl: 'https://github.com/sebstarsio/sebstars_portfolio/blob/main/src/components/demos/BlogCMS.tsx',
     features: [
       'Base de données PostgreSQL avec Prisma ORM',
       'Authentification sécurisée avec NextAuth.js',
@@ -121,6 +123,7 @@ export const projects: Project[] = [
     image: '/images/projects/dashboard.svg',
     demo: '/demo/dashboard',
     github: 'https://github.com/sebstars/dashboard',
+    githubUrl: 'https://github.com/sebstarsio/sebstars_portfolio/blob/main/src/components/demos/Dashboard.tsx',
     features: [
       '8 métriques en temps réel (utilisateurs, revenus, commandes, conversion, sessions, rebond, durée, pages vues)',
       '4 types de graphiques (ligne, barres, aires, camembert)',
