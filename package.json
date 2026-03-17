@@ -7,11 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "log:step2": "node tools/rebuild/generate_step_log_02.mjs",
-    "screenshots": "tsx scripts/generateProjectScreenshots.ts",
-    "studio-screenshots": "tsx scripts/generateStudioScreenshots.ts",
-    "capture-demo": "tsx scripts/captureDemoOnly.ts",
-    "assets:build": "node scripts/post-process-assets.js"
+    "log:step2": "node tools/rebuild/generate_step_log_02.mjs"
   },
   "dependencies": {
     "@tiptap/extension-link": "^2.27.2",

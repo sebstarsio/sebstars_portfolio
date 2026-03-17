@@ -60,9 +60,8 @@ export default function SolarSystem({ architectureNotes, lang = 'fr' }: SolarSys
   const [searchQuery, setSearchQuery] = useState('');
   const lastWheelTime = useRef(0);
   const MOBILE_BREAKPOINT = 768;
-  /** Taille de l'orbite la plus externe en px (neptune) — mobile = 600 (solar-system.css), desktop = 960 */
+  /** Taille de l'orbite la plus externe en px (neptune) — mobile = 600 (solar-system.css) */
   const ORBIT_SIZE_MOBILE = 600;
-  const ORBIT_SIZE_DESKTOP = 960;
 
   // Sur mobile : calculer l'échelle pour remplir le conteneur (évite système minuscule + bordures vides)
   useEffect(() => {
