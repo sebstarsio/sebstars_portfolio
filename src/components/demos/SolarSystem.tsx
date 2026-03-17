@@ -59,6 +59,38 @@ export default function SolarSystem({ architectureNotes, lang = 'fr' }: SolarSys
   const [comparisonPlanet, setComparisonPlanet] = useState<PlanetData | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const lastWheelTime = useRef(0);
+  const MOBILE_BREAKPOINT = 768;
+  /** Taille de l'orbite la plus externe en px (neptune) — mobile = 600 (solar-system.css), desktop = 960 */
+  const ORBIT_SIZE_MOBILE = 600;
+  const ORBIT_SIZE_DESKTOP = 960;
+
+  // Sur mobile : calculer l'échelle pour remplir le conteneur (évite système minuscule + bordures vides)
+  useEffect(() => {
+    const updateMobileScale = () => {
+      if (typeof window === 'undefined' || window.innerWidth >= MOBILE_BREAKPOINT) return;
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const orbitSize = ORBIT_SIZE_MOBILE;
+      const scaleToFit = (Math.min(rect.width, rect.height) / orbitSize) * 0.9;
+      const next = Math.min(1.1, Math.max(0.35, scaleToFit));
+      setScale(prev => (Math.abs(prev - next) < 0.02 ? prev : next));
+    };
+    const raf = requestAnimationFrame(() => updateMobileScale());
+    const timeout = setTimeout(updateMobileScale, 150);
+    window.addEventListener('resize', updateMobileScale);
+    const container = containerRef.current;
+    const observer =
+      typeof ResizeObserver !== 'undefined' && container
+        ? new ResizeObserver(updateMobileScale)
+        : null;
+    if (observer && container) observer.observe(container);
+    return () => {
+      cancelAnimationFrame(raf);
+      clearTimeout(timeout);
+      window.removeEventListener('resize', updateMobileScale);
+      observer?.disconnect();
+    };
+  }, []);
 
   // Filtrer les planètes selon la recherche
   const filteredPlanets = PLANETS_DATA.filter(planet =>

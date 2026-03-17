@@ -875,15 +875,13 @@ section.wf-section.wf-projects .wf-inner {
     min-height: 0;
   }
 
+  /* Pas de scale CSS : l'échelle est calculée en JS pour remplir l'espace sans bordures vides */
   .solar-system-container {
     width: 100%;
     height: 100%;
-    min-height: 0;
+    min-height: 55vh;
     margin: 0;
     overflow: hidden;
-    /* Scale global pour que le système (orbites jusqu'à 960px) tienne sur mobile */
-    transform: scale(0.38);
-    transform-origin: center center;
   }
 
   .neptune-orbit {
@@ -931,11 +929,10 @@ section.wf-section.wf-projects .wf-inner {
   }
 }
 
-/* Très petit écran : scale encore réduit pour cadrage correct */
+/* Très petit écran : même logique JS (scale calculé depuis le conteneur), pas de scale CSS */
 @media (max-width: 480px) {
   .solar-system-container {
-    transform: scale(0.28);
-    transform-origin: center center;
+    min-height: 50vh;
   }
 }
 
