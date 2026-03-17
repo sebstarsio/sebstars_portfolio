@@ -83,21 +83,24 @@ export default function SolarSystem({ architectureNotes, lang = 'fr' }: SolarSys
   useEffect(() => {
     if (!containerRef.current || !systemRef.current) return;
 
-    // Calculer la position pour aligner le haut de l'orbite de Neptune avec le bas de la section hero
+    // Position verticale : ne jamais pousser la démo sous le Hero (évite le chevauchement sur desktop/mobile)
     const updateSystemPosition = () => {
       const heroSection = document.querySelector('.wf-hero');
-      if (heroSection && containerRef.current && systemRef.current) {
+      if (!containerRef.current || !systemRef.current) return;
+
+      let translateY = 0;
+      if (heroSection) {
         const heroRect = heroSection.getBoundingClientRect();
         const heroBottom = heroRect.bottom;
         const containerRect = containerRef.current.getBoundingClientRect();
         const containerTop = containerRect.top;
-
-        // L'orbite de Neptune fait 960px de diamètre (solar-system.css), donc le haut à 480px au-dessus du centre
         const neptuneRadius = 480 * scale;
         const offset = heroBottom - containerTop - neptuneRadius + 50;
-
-        systemRef.current.style.transform = `translateY(${offset}px) scale3d(${scale}, ${scale}, 1)`;
+        // Clamp : ne jamais appliquer un translateY négatif qui masquerait la démo sous le Hero
+        translateY = Math.max(0, offset);
       }
+
+      systemRef.current.style.transform = `translateY(${translateY}px) scale3d(${scale}, ${scale}, 1)`;
     };
 
     const handleWheel = (e: WheelEvent) => {
@@ -125,22 +128,22 @@ export default function SolarSystem({ architectureNotes, lang = 'fr' }: SolarSys
     };
   }, [scale]);
 
-  // Mettre à jour la position quand le scale change
+  // Mettre à jour la position quand le scale change (même règle : pas de translateY négatif)
   useEffect(() => {
     if (!containerRef.current || !systemRef.current) return;
 
+    let translateY = 0;
     const heroSection = document.querySelector('.wf-hero');
     if (heroSection) {
       const heroRect = heroSection.getBoundingClientRect();
       const heroBottom = heroRect.bottom;
       const containerRect = containerRef.current.getBoundingClientRect();
       const containerTop = containerRect.top;
-
       const neptuneRadius = 480 * scale;
       const offset = heroBottom - containerTop - neptuneRadius + 50;
-
-      systemRef.current.style.transform = `translateY(${offset}px) scale3d(${scale}, ${scale}, 1)`;
+      translateY = Math.max(0, offset);
     }
+    systemRef.current.style.transform = `translateY(${translateY}px) scale3d(${scale}, ${scale}, 1)`;
   }, [scale]);
 
   // Le scale est maintenant géré dans le premier useEffect avec updateSystemPosition
